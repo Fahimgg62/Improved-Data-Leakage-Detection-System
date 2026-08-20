@@ -1,0 +1,251 @@
+2. OVERALL DESCRIPTION
+
+The Secure File Sharing and Tracking Portal is a web-based application designed to provide secure file storage, controlled file sharing, recipient-specific file tracking, and leaked-file investigation. The system can be considered as a private file-sharing platform for an organization, similar to Google Drive or Dropbox, but with an additional tracking mechanism.
+
+The main feature of the system is the ability to generate a unique version of a sensitive file for each authorized recipient. The system can insert recipient-specific dummy or decoy data into the distributed file. If a copy of the file is later leaked, an administrator can upload the leaked file to the portal and scan it. The system compares the dummy data in the leaked file with the records maintained in the database and identifies the recipient associated with the matching copy.
+
+The system is intended to improve data security, accountability, and leak investigation within organizations that handle sensitive information.
+
+2.1 USER CLASSES AND CHARACTERISTICS
+
+The system will mainly have two types of users:
+
+1. ADMINISTRATOR
+
+The Administrator is the primary management user of the system. The administrator is responsible for managing users, files, file distribution, and leak investigations.
+
+Main responsibilities of the Administrator include:
+
+* Login securely to the system.
+* Create, update, and manage employee accounts.
+* Upload confidential files.
+* Select authorized employees for file sharing.
+* Share files with selected employees.
+* Generate recipient-specific file copies.
+* Manage dummy or decoy data associated with distributed files.
+* Monitor file access and download activities.
+* View file-sharing history and audit logs.
+* Upload suspected leaked files.
+* Run the leak detection or tracking process.
+* View the suspected source recipient of a leaked file.
+* Manage and monitor the overall system.
+
+The Administrator is expected to have a basic understanding of computer systems, file management, and organizational security procedures.
+
+2. EMPLOYEE / AUTHORIZED USER
+
+The Employee is an authorized user who receives files from the Administrator. Employees can access only the files and functions permitted by the system.
+
+Main responsibilities and activities of an Employee include:
+
+* Login securely to the system.
+* View files shared with them.
+* Download authorized files.
+* Access their assigned recipient-specific version of a file.
+* View basic information about files shared with them.
+* Logout from the system.
+
+Employees will not have permission to access other employees' files, tracking information, administrator functions, or leak-investigation results.
+
+2.2 USER NEEDS
+
+The system is designed to satisfy the following user needs:
+
+1. Secure Authentication
+
+Users need a secure login mechanism so that only authorized individuals can access the system.
+
+2. Controlled File Sharing
+
+Administrators need the ability to share confidential files only with selected employees.
+
+3. Recipient-Specific Files
+
+The system needs to generate unique copies of sensitive files for different recipients.
+
+4. File Traceability
+
+Administrators need to determine which recipient-specific copy is associated with a leaked file.
+
+5. Leak Investigation
+
+Administrators need a mechanism to upload and scan suspected leaked files.
+
+6. Access Monitoring
+
+Administrators need to monitor file access and download activities.
+
+7. User Management
+
+Administrators need to create, manage, activate, deactivate, and control employee accounts.
+
+8. Audit Records
+
+The system needs to maintain records of important activities such as file uploads, file sharing, downloads, and investigation activities.
+
+9. Confidentiality
+
+Users need assurance that confidential organizational files are protected from unauthorized access.
+
+10. Easy-to-Use Interface
+
+The system should provide a simple and understandable interface so that administrators and employees can perform their tasks without unnecessary complexity.
+
+11. Investigation Support
+
+The system should provide sufficient information about a suspected matching recipient to help the organization perform further investigation.
+
+The result of the tracking mechanism should be treated as evidence or an investigative lead rather than absolute proof of intentional wrongdoing.
+
+2.3 OPERATING ENVIRONMENT
+
+The Secure File Sharing and Tracking Portal will operate as a web-based application using the MERN technology stack.
+
+The expected operating environment is described below.
+
+1. FRONT-END ENVIRONMENT
+
+The front end will be developed using:
+
+* React.js
+* HTML
+* CSS
+* JavaScript
+
+The front end will provide the user interface for administrators and employees.
+
+2. BACK-END ENVIRONMENT
+
+The back end will be developed using:
+
+* Node.js
+* Express.js
+
+The backend will handle authentication, file management, user management, file sharing, tracking, and communication with the database.
+
+3. DATABASE ENVIRONMENT
+
+The system will use:
+
+* MongoDB
+
+MongoDB will store information such as:
+
+* User accounts
+* User roles
+* File metadata
+* File-sharing records
+* Recipient information
+* Tracking or dummy-data records
+* Download and access records
+* Audit logs
+* Investigation results
+
+4. WEB BROWSER
+
+Users will access the system through a modern web browser such as:
+
+* Google Chrome
+* Microsoft Edge
+* Mozilla Firefox
+* Other modern browsers supporting current web standards
+
+5. SERVER ENVIRONMENT
+
+The application may be deployed on:
+
+* A local development server
+* An organization's private server
+* A cloud-based server
+
+The server should provide sufficient processing power, memory, storage, and network connectivity for the expected number of users and files.
+
+6. NETWORK ENVIRONMENT
+
+The system requires a network connection between the client browser and the application server. For production deployment, HTTPS should be used to protect communication between users and the server.
+
+2.4 CONSTRAINTS
+
+The development and operation of the Secure File Sharing and Tracking Portal may be affected by the following constraints:
+
+1. Technology Constraint
+
+The system is planned to be developed using the MERN stack, consisting of MongoDB, Express.js, React.js, and Node.js.
+
+2. File Format Constraint
+
+The tracking mechanism may not work equally with every possible file format. The system may initially support selected text-based or structured file formats where recipient-specific dummy data can be inserted and detected reliably.
+
+3. File Size Constraint
+
+Very large files may require additional storage, processing time, and server resources. Therefore, reasonable file-size limits may be required.
+
+4. Security Constraint
+
+The system must protect confidential files and tracking information from unauthorized access.
+
+5. Authentication Constraint
+
+Only authenticated and authorized users should be able to access protected system functions.
+
+6. Storage Constraint
+
+The system requires sufficient storage capacity for uploaded files, recipient-specific copies, tracking information, and audit logs.
+
+7. Network Constraint
+
+The performance of file uploads and downloads depends on the available network bandwidth and server connectivity.
+
+8. Processing Constraint
+
+Generating multiple recipient-specific files and scanning leaked files may require additional processing resources.
+
+9. Access Control Constraint
+
+Employees must not be allowed to access administrator functions, other employees' files, tracking information, or investigation results.
+
+10. Tracking Constraint
+
+The system cannot guarantee detection if a leaked file has been significantly modified in a way that removes or changes the tracking information.
+
+11. Legal and Privacy Constraint
+
+The organization must use the system in accordance with applicable data-protection, privacy, employment, and organizational policies.
+
+12. Evidence Constraint
+
+A tracking match should not automatically be considered conclusive proof that a specific employee intentionally leaked a file. Additional investigation may be necessary.
+
+2.5 ASSUMPTIONS
+
+The following assumptions are made during the design and development of the system:
+
+1. Users will have valid accounts and appropriate permissions to access the system.
+
+2. Administrators will be responsible for uploading and distributing confidential files.
+
+3. Employees will access the system using authorized credentials.
+
+4. Users will have access to a compatible web browser and a stable network connection.
+
+5. The server and database will remain available during normal system operation.
+
+6. The organization will provide sufficient storage capacity for uploaded files and generated recipient-specific copies.
+
+7. Administrators will correctly select the intended recipients when sharing files.
+
+8. The system will maintain accurate records of users, file distributions, and tracking information.
+
+9. The recipient-specific dummy or decoy data will remain identifiable within the supported file formats.
+
+10. Administrators will have access to a suspected leaked file when conducting a leak investigation.
+
+11. The leaked file will retain enough of its original content or tracking information for the system to perform a meaningful comparison.
+
+12. Users will not intentionally attempt to bypass or manipulate the tracking mechanism.
+
+13. The organization will implement appropriate security policies alongside the software system.
+
+14. The system's tracking result will be used as an investigative aid and will be verified through additional evidence before disciplinary or legal action is taken.
+
+15. The system will be maintained and updated regularly to address security vulnerabilities, software dependencies, and operational requirements.

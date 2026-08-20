@@ -1,0 +1,39 @@
+
+
+3.2 Non-Functional Requirements
+
+1. Security
+The system must provide strong security so that only authorized users can access confidential files. User authentication and role-based access should be implemented to prevent unauthorized access.
+
+2. Privacy
+Sensitive company files and user information must remain private. The system should not expose file contents or tracking information to users who do not have permission.
+
+3. Performance
+The system should upload, download, and scan files within a reasonable amount of time. It should also be able to handle multiple users accessing files at the same time without becoming too slow.
+
+4. Reliability
+The system should work properly without frequently crashing or losing uploaded files. File-sharing and tracking information should be stored correctly even when multiple users are using the system simultaneously.
+
+5. Scalability
+The system should be designed so that more employees, files, and organizations can be added in the future without requiring major changes to the system.
+
+6. Usability
+The portal should have a simple and user-friendly interface. Employees and administrators should be able to upload, share, download, and track files without needing advanced technical knowledge.
+
+7. Auditability
+The system should keep a proper record of important activities such as file uploads, downloads, sharing, and leak investigations. These records should include information such as the user, file, and time of the activity.
+
+8. Data Integrity
+The system must ensure that files are not accidentally modified or corrupted during uploading, sharing, downloading, or leak detection. The dummy data added for tracking should also remain associated with the correct recipient.
+
+9. Availability
+The portal should be available whenever authorized users need to access their files. The system should minimize downtime and handle unexpected failures as much as possible.
+
+10. Maintainability
+The system should be developed in a way that makes it easy to fix bugs, update existing features, and add new features later. The code should be properly organized and documented.
+
+11. Compatibility
+The system should work properly on commonly used web browsers such as Chrome, Firefox, and Edge, and should provide a consistent experience across different screen sizes.
+
+12. Backup and Recovery
+Important files, user information, and activity logs should be backed up regularly. In case of a system failure, the data should be recoverable without significant loss.
