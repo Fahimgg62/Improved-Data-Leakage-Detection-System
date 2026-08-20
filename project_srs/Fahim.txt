@@ -1,0 +1,72 @@
+================================================================================
+                    IMPROVED DATA LEAKAGE DETECTION SYSTEM
+                     Software Requirements Specification (SRS)
+================================================================================
+
+1. FUNCTIONAL REQUIREMENTS (FR)
+================================================================================
+
+--------------------------------------------------------------------------------
+[FR-1] Secure File Upload and Validation
+--------------------------------------------------------------------------------
+  • User Story:
+    As an Administrator, I want to upload original data files so that the system
+    can prepare them for secure distribution to authorized agents.
+
+  • Confirmation:
+    The system shall validate file formats during upload, supporting only .txt,
+    .jpg, and .bmp. All other formats must be rejected with a descriptive error
+    message.
+
+
+--------------------------------------------------------------------------------
+[FR-2] Target Agent Allocation
+--------------------------------------------------------------------------------
+  • User Story:
+    As an Administrator, I need to assign specific files to designated agents
+    to ensure data is shared according to our security protocols.
+
+  • Confirmation:
+    The Administrative interface shall allow the selection of multiple agents
+    from the database for the concurrent assignment of uploaded files.
+
+
+--------------------------------------------------------------------------------
+[FR-3] Steganographic Agent ID Embedding
+--------------------------------------------------------------------------------
+  • User Story:
+    As the System, I must automatically embed an imperceptible, agent-specific
+    identifier into files to create a unique forensic footprint for tracking
+    purposes.
+
+  • Confirmation:
+    The backend shall apply a specific alteration algorithm to .jpg, .bmp,
+    and .txt files to embed the unique ID prior to agent accessibility.
+
+
+--------------------------------------------------------------------------------
+[FR-4] Audit Mapping and Database Logging
+--------------------------------------------------------------------------------
+  • User Story:
+    As the System, I need to maintain a secure audit trail mapping every altered
+    file to its specific recipient to facilitate future leak investigations.
+
+  • Confirmation:
+    The database shall record the original filename, agent-specific ID,
+    recipient identity, and an accurate transaction timestamp for every
+    allocation.
+
+
+--------------------------------------------------------------------------------
+[FR-5] Forensic Leak Analysis and Attribution
+--------------------------------------------------------------------------------
+  • User Story:
+    As an Administrator, I want to upload a suspicious or leaked file so that
+    the system can identify the agent responsible for the breach.
+
+  • Confirmation:
+    The system shall extract the embedded ID from uploaded leaked files and
+    query the audit database to display the associated agent’s registration
+    details.
+
+================================================================================
