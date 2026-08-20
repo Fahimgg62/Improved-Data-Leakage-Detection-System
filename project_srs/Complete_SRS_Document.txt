@@ -1,0 +1,488 @@
+================================================================================
+                    IMPROVED DATA LEAKAGE DETECTION SYSTEM
+                  SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
+================================================================================
+
+PROJECT INFORMATION:
+--------------------------------------------------------------------------------
+Project Title : Improved Data Leakage Detection System
+System Type   : Secure File Sharing, Steganographic Tracking & Forensic Analysis
+Technology    : MERN Stack (MongoDB, Express.js, React.js, Node.js)
+Document Type : Consolidated Master Software Requirements Specification
+
+PROJECT CONTRIBUTORS:
+--------------------------------------------------------------------------------
+  1. Fahim Bin Zaman       - ID: 24524203055
+  2. Abid Ajmal Tahmid     - ID: 24524203133
+  3. Hojaifa               - ID: 24524203181
+  4. Team Member           - ID: 24524203023
+================================================================================
+
+
+================================================================================
+                              TABLE OF CONTENTS
+================================================================================
+1. INTRODUCTION
+   1.1 Purpose
+   1.2 Intended Audience
+   1.3 Intended Use
+   1.4 Product Scope
+   1.5 Risk Definitions and Risk Management
+
+2. OVERALL DESCRIPTION
+   2.1 User Classes and Characteristics
+   2.2 User Needs
+   2.3 Operating Environment
+   2.4 Constraints
+   2.5 Assumptions
+
+3. SPECIFIC SYSTEM REQUIREMENTS
+   3.1 Functional Requirements (FR)
+       [FR-1] Secure File Upload and Validation
+       [FR-2] Target Agent Allocation
+       [FR-3] Steganographic Agent ID Embedding
+       [FR-4] Audit Mapping and Database Logging
+       [FR-5] Forensic Leak Analysis and Attribution
+   3.2 Non-Functional Requirements (NFR)
+       1. Security
+       2. Privacy
+       3. Performance
+       4. Reliability
+       5. Scalability
+       6. Usability
+       7. Auditability
+       8. Data Integrity
+       9. Availability
+       10. Maintainability
+       11. Compatibility
+       12. Backup and Recovery
+================================================================================
+
+
+================================================================================
+1. INTRODUCTION
+================================================================================
+
+Improved Data Leakage Detection System is a web-based system designed to provide 
+organizations with a secure and accountable method for sharing confidential 
+files among authorized users. The system combines standard file-sharing 
+functionality with a file-tracking mechanism that allows organizations to 
+identify the recipient-specific copy associated with a leaked file.
+
+In conventional file-sharing systems, an administrator may know who was given 
+access to a document, but it can be difficult to determine which recipient's 
+copy was responsible for a subsequent leak. The proposed system addresses this 
+limitation by generating recipient-specific copies of sensitive files and 
+embedding unique dummy, decoy, or steganographic identification data into those 
+copies.
+
+When a suspected leaked file is recovered, an authorized administrator can upload 
+it to the system for analysis. By comparing the embedded tracking data contained 
+in the leaked file with the recipient-specific records maintained by the system, 
+the system can identify the copy from which the leak is likely to have 
+originated.
+
+The system is intended to support organizations such as software companies, 
+corporate offices, universities, examination departments, medical institutions, 
+and research laboratories where unauthorized disclosure of confidential 
+information can cause significant damage.
+
+
+--------------------------------------------------------------------------------
+1.1 PURPOSE
+--------------------------------------------------------------------------------
+The purpose of the Improved Data Leakage Detection System is to provide a secure 
+platform for uploading, storing, sharing, monitoring, and investigating 
+confidential files.
+
+The main objectives of the system are:
+  1. To provide authorized users with secure access to organizational files.
+  2. To allow administrators to upload and distribute confidential documents.
+  3. To generate recipient-specific copies of sensitive files.
+  4. To insert unique dummy or decoy information into distributed copies for 
+     traceability.
+  5. To maintain records of file distribution and recipient information.
+  6. To allow administrators to upload suspected leaked files for investigation.
+  7. To compare leaked files with stored tracking information.
+  8. To identify the recipient-specific copy associated with a suspected leak.
+  9. To maintain an audit trail of relevant file-sharing activities.
+ 10. To reduce the risk and impact of unauthorized disclosure of confidential 
+     information.
+
+*Note: The system is intended to provide traceability and investigation support. 
+It should be treated as an investigative aid and lead rather than automatic or 
+conclusive proof that a particular employee intentionally committed a data leak.*
+
+
+--------------------------------------------------------------------------------
+1.2 INTENDED AUDIENCE
+--------------------------------------------------------------------------------
+This Software Requirements Specification (SRS) is intended for the following 
+stakeholders:
+
+  1. Project Developers:
+     Developers will use this document to understand the functional and 
+     technical requirements during system implementation.
+
+  2. System Administrators:
+     Administrators will use the system to manage users, files, file sharing, 
+     access permissions, and leak investigations.
+
+  3. Organization Management:
+     Management can use the system to improve confidential-data protection, 
+     accountability, and security.
+
+  4. End Users / Employees / Agents:
+     Employees will use the system to securely access and download files shared 
+     with them.
+
+  5. Security Personnel:
+     Security personnel can use the tracking and investigation features to 
+     analyze suspected file leaks.
+
+  6. Project Supervisors and Evaluators:
+     Supervisors and evaluators can use this document to understand and evaluate 
+     the requirements and architecture of the proposed system.
+
+  7. Testers and QA Personnel:
+     Testing personnel can use the requirements as a basis for designing and 
+     executing system test suites.
+
+
+--------------------------------------------------------------------------------
+1.3 INTENDED USE
+--------------------------------------------------------------------------------
+The Improved Data Leakage Detection System is intended to be used by 
+organizations that need to distribute confidential information to multiple 
+authorized users while maintaining the ability to investigate potential data 
+leaks.
+
+A typical usage scenario is described below:
+  1. An administrator logs into the portal using authorized credentials.
+  2. The administrator uploads a confidential file to the system.
+  3. The administrator selects one or more authorized employees/agents as 
+     recipients.
+  4. The system generates a recipient-specific version of the file.
+  5. Unique dummy, decoy, or steganographic data is inserted into each 
+     recipient's copy prior to accessibility.
+  6. The recipient receives or downloads the assigned file.
+  7. The system records relevant sharing, assignment, and access information.
+  8. If confidential information is later suspected to have been leaked, the 
+     administrator obtains the suspected leaked file.
+  9. The administrator uploads the leaked file to the investigation module.
+ 10. The system analyzes the leaked file and compares its tracking information 
+     with stored database records.
+ 11. The system reports the matching recipient-specific copy and relevant 
+     tracking details to assist the administrator's investigation.
+
+
+--------------------------------------------------------------------------------
+1.4 PRODUCT SCOPE
+--------------------------------------------------------------------------------
+The scope of the Improved Data Leakage Detection System includes the design and 
+development of a secure web-based platform for controlled file distribution 
+and leak traceability.
+
+[ IN SCOPE ]
+  1. User registration, role-based authentication, and access control.
+  2. Secure login and session management for Administrators and Employees.
+  3. File upload, format validation, and secure cloud/server storage.
+  4. File sharing between authorized users with access rights.
+  5. Recipient-specific file generation.
+  6. Insertion and management of unique dummy, decoy, or steganographic ID data.
+  7. File download, distribution, and access tracking.
+  8. Comprehensive file-sharing history and immutable audit logs.
+  9. User and agent management by administrators.
+ 10. Leaked file upload module for forensic investigation.
+ 11. Automated comparison and forensic extraction of leaked file tracking data.
+ 12. Attribution of the likely source copy/recipient of a leaked file.
+ 13. Reporting of forensic investigation results to authorized administrators.
+ 14. Essential security controls to safeguard data integrity and confidentiality.
+
+[ OUT OF SCOPE ]
+  1. Automatic prevention of users from photographing screens or manual transcription.
+  2. Guaranteed physical identification of a third party leaking a printed copy.
+  3. Monitoring of users' personal physical devices outside the application boundary.
+  4. Investigation of data leaks occurring entirely outside the organization's IT scope.
+  5. Automated legal or disciplinary action against suspected employees.
+  6. Universal protection against completely destructive file transformations.
+
+
+--------------------------------------------------------------------------------
+1.5 RISK DEFINITIONS AND RISK MANAGEMENT
+--------------------------------------------------------------------------------
+The following risks and their mitigation strategies are defined for the system:
+
+  1. Unauthorized Access (Impact: High)
+     • Description: An unauthorized individual attempts to access the portal or files.
+     • Mitigation : Strict authentication, role-based access, and token validation.
+
+  2. Credential Compromise (Impact: High)
+     • Description: User credentials are stolen or misused.
+     • Mitigation : Hashed password storage (bcrypt), session timeout, and MFA readiness.
+
+  3. Data Leakage (Impact: Critical)
+     • Description: Confidential organizational information is distributed illicitly.
+     • Mitigation : Proactive recipient-specific steganographic watermarking & tracking.
+
+  4. Tracking Data Manipulation (Impact: High)
+     • Description: Unauthorized users attempt to alter database audit logs.
+     • Mitigation : Restricted database permissions, encrypted logs, and audit integrity.
+
+  5. False Attribution (Impact: High)
+     • Description: A leaked file matches a recipient, but intentionality is unproven.
+     • Mitigation : Treat findings as forensic investigative evidence, not automated verdicts.
+
+  6. File Corruption (Impact: Medium)
+     • Description: Files get damaged during embedding, storage, or transmission.
+     • Mitigation : Hash checksum verification before and after embedding operations.
+
+  7. System Failure (Impact: High)
+     • Description: Server or database outage disrupts file access and analysis.
+     • Mitigation : Containerized deployment, auto-restart, and reliable database clustering.
+
+  8. Privacy Risk (Impact: High)
+     • Description: Sensitive user records are inadvertently exposed.
+     • Mitigation : Principle of least privilege and strict data isolation per role.
+
+  9. Malicious Insider (Impact: Critical)
+     • Description: Legitimate users exploit their access to extract data.
+     • Mitigation : Individualized forensic watermarking creates deterrence and traceability.
+
+ 10. Tracking Evasion (Impact: High)
+     • Description: Users convert or alter file formats to destroy embedded markers.
+     • Mitigation : Robust multi-layer steganography across supported formats (.txt, .jpg, .bmp).
+
+
+================================================================================
+2. OVERALL DESCRIPTION
+================================================================================
+
+The Secure File Sharing and Tracking Portal operates as a private, high-security 
+file-sharing environment. It couples conventional document storage with an 
+advanced forensic tracking layer.
+
+--------------------------------------------------------------------------------
+2.1 USER CLASSES AND CHARACTERISTICS
+--------------------------------------------------------------------------------
+The system defines two primary user classes:
+
+1. ADMINISTRATOR
+   • Characteristics: Management user with elevated security privileges and 
+     technical understanding of organizational data governance.
+   • Responsibilities:
+     - Secure login and multi-factor session authentication.
+     - Create, update, activate, deactivate, and manage employee/agent accounts.
+     - Upload original confidential data files.
+     - Select authorized employees/agents for secure file distribution.
+     - Trigger steganographic embedding and recipient-specific file generation.
+     - Monitor file access, download history, and system audit logs.
+     - Upload suspected leaked files to the Forensic Analysis Module.
+     - Review forensic attribution reports and audit match results.
+
+2. EMPLOYEE / AUTHORIZED AGENT
+   • Characteristics: Standard organizational user receiving authorized documents.
+   • Responsibilities:
+     - Authenticate securely into their dedicated user dashboard.
+     - View only the confidential files explicitly shared with their account.
+     - Download their personalized, recipient-specific file copy.
+     - View metadata related to their assigned documents.
+   • Restrictions:
+     - Cannot access other employees' files or download records.
+     - No access to administrative controls, audit logs, or forensic modules.
+
+
+--------------------------------------------------------------------------------
+2.2 USER NEEDS
+--------------------------------------------------------------------------------
+  1. Secure Authentication: Robust credential validation and role segregation.
+  2. Controlled File Sharing: Granular distribution to authorized recipients only.
+  3. Recipient-Specific Generation: Unique copies generated per agent.
+  4. File Traceability: Clear forensic linkage between distributed files and recipients.
+  5. Leak Investigation: High-speed scanning of suspicious files against audit records.
+  6. Access Monitoring: Detailed tracking of user download and view timestamps.
+  7. Account Lifecycle Management: Simple administration of employee permissions.
+  8. Comprehensive Auditing: Immutable records of all upload, share, and scan actions.
+  9. Data Confidentiality: High-grade protection of stored and transmitted documents.
+ 10. Intuitive User Interface: Responsive, modern, and accessible design.
+ 11. Investigative Evidence Support: Actionable reports for internal security teams.
+
+
+--------------------------------------------------------------------------------
+2.3 OPERATING ENVIRONMENT
+--------------------------------------------------------------------------------
+The application is engineered on the modern MERN architecture:
+
+  1. Front-End Environment:
+     • React.js, HTML5, CSS3, JavaScript (ES6+)
+     • Responsive UI optimized for desktop, tablet, and mobile browsers.
+
+  2. Back-End Environment:
+     • Node.js & Express.js REST API
+     • Middleware for JWT authentication, file validation, and steganography.
+
+  3. Database Environment:
+     • MongoDB
+     • Stores user records, file metadata, agent allocations, embedded hashes, 
+       and audit logs.
+
+  4. Client Web Browsers:
+     • Google Chrome, Mozilla Firefox, Microsoft Edge, Safari.
+
+  5. Server and Deployment Environment:
+     • Node.js runtime environment on Linux/Windows server or cloud platforms.
+     • HTTPS encryption with TLS 1.3 for all client-server communications.
+
+
+--------------------------------------------------------------------------------
+2.4 CONSTRAINTS
+--------------------------------------------------------------------------------
+  1. Technology Stack: Built using MongoDB, Express.js, React.js, and Node.js.
+  2. Supported Formats: Initial release focuses on .txt, .jpg, and .bmp for 
+     reliable steganographic embedding and extraction.
+  3. File Size Limits: Reasonable size caps applied to ensure responsive server 
+     processing during steganographic operations.
+  4. Access Isolation: Strict boundaries preventing non-admin access to audit tables.
+  5. Network Dependency: Requires stable network connectivity for cloud transactions.
+  6. Forensic Limitations: Excessive compression or re-encoding may degrade embedded markers.
+  7. Policy Compliance: Operates within organizational privacy and data governance frameworks.
+
+
+--------------------------------------------------------------------------------
+2.5 ASSUMPTIONS
+--------------------------------------------------------------------------------
+  1. Users possess valid credentials and assigned organizational roles.
+  2. Administrators accurately select target recipients during file allocation.
+  3. Server infrastructure maintains high uptime and adequate storage.
+  4. Leaked files submitted for analysis retain sufficient embedded signature data.
+  5. Forensic findings serve as corroborative evidence within broader investigations.
+
+
+================================================================================
+3. SPECIFIC SYSTEM REQUIREMENTS
+================================================================================
+
+--------------------------------------------------------------------------------
+3.1 FUNCTIONAL REQUIREMENTS (FR)
+--------------------------------------------------------------------------------
+
+[FR-1] Secure File Upload and Validation
+--------------------------------------------------------------------------------
+  • User Story:
+    As an Administrator, I want to upload original data files so that the system
+    can prepare them for secure distribution to authorized agents.
+
+  • Confirmation:
+    The system shall validate file formats during upload, supporting only .txt,
+    .jpg, and .bmp. All other formats must be rejected with a descriptive error
+    message.
+
+
+--------------------------------------------------------------------------------
+[FR-2] Target Agent Allocation
+--------------------------------------------------------------------------------
+  • User Story:
+    As an Administrator, I need to assign specific files to designated agents
+    to ensure data is shared according to our security protocols.
+
+  • Confirmation:
+    The Administrative interface shall allow the selection of multiple agents
+    from the database for the concurrent assignment of uploaded files.
+
+
+--------------------------------------------------------------------------------
+[FR-3] Steganographic Agent ID Embedding
+--------------------------------------------------------------------------------
+  • User Story:
+    As the System, I must automatically embed an imperceptible, agent-specific
+    identifier into files to create a unique forensic footprint for tracking
+    purposes.
+
+  • Confirmation:
+    The backend shall apply a specific alteration algorithm to .jpg, .bmp,
+    and .txt files to embed the unique ID prior to agent accessibility.
+
+
+--------------------------------------------------------------------------------
+[FR-4] Audit Mapping and Database Logging
+--------------------------------------------------------------------------------
+  • User Story:
+    As the System, I need to maintain a secure audit trail mapping every altered
+    file to its specific recipient to facilitate future leak investigations.
+
+  • Confirmation:
+    The database shall record the original filename, agent-specific ID,
+    recipient identity, and an accurate transaction timestamp for every
+    allocation.
+
+
+--------------------------------------------------------------------------------
+[FR-5] Forensic Leak Analysis and Attribution
+--------------------------------------------------------------------------------
+  • User Story:
+    As an Administrator, I want to upload a suspicious or leaked file so that
+    the system can identify the agent responsible for the breach.
+
+  • Confirmation:
+    The system shall extract the embedded ID from uploaded leaked files and
+    query the audit database to display the associated agent’s registration
+    details.
+
+
+--------------------------------------------------------------------------------
+3.2 NON-FUNCTIONAL REQUIREMENTS (NFR)
+--------------------------------------------------------------------------------
+
+ 1. Security:
+    The system must provide strong security so that only authorized users can 
+    access confidential files. User authentication and role-based access control 
+    (RBAC) must be strictly enforced.
+
+ 2. Privacy:
+    Sensitive company files and user information must remain confidential. The 
+    system should never expose file contents or tracking data to unauthorized 
+    entities.
+
+ 3. Performance:
+    The system should upload, embed, download, and scan files with minimal latency. 
+    It must support concurrent access by multiple users without noticeable degradation.
+
+ 4. Reliability:
+    The system must operate continuously without data loss or crashes during 
+    file processing, maintaining consistent tracking integrity across sessions.
+
+ 5. Scalability:
+    The architecture must seamlessly support growth in the number of agents, 
+    stored files, and organizations without requiring core architectural redesign.
+
+ 6. Usability:
+    The portal must deliver an intuitive, clean interface enabling administrators 
+    and employees to execute workflows without extensive technical training.
+
+ 7. Auditability:
+    The system must maintain an immutable, tamper-evident log of all key actions 
+    (uploads, distributions, downloads, investigations) with precise timestamps.
+
+ 8. Data Integrity:
+    Files must be protected against unintentional corruption or alterations during 
+    upload, steganographic watermarking, storage, and download pipelines.
+
+ 9. Availability:
+    The service should ensure high availability (target >= 99.5% uptime) with 
+    graceful degradation and rapid recovery mechanisms.
+
+10. Maintainability:
+    The codebase must follow clean modular standards, separation of concerns, 
+    and comprehensive documentation for straightforward maintenance and extensions.
+
+11. Compatibility:
+    The portal must provide consistent visual and functional performance across 
+    modern web browsers (Chrome, Firefox, Edge, Safari) and diverse screen sizes.
+
+12. Backup and Recovery:
+    Critical application data, audit logs, and file metadata must undergo regular 
+    automated backups to prevent permanent loss in case of hardware or network failures.
+
+================================================================================
+                       END OF SPECIFICATION DOCUMENT
+================================================================================
