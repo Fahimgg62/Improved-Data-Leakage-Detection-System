@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const config = require('./config');
 const db = require('./db');
 
@@ -19,6 +20,10 @@ app.use(express.json({ limit: '60mb' }));
 app.use(express.urlencoded({ extended: true, limit: '60mb' }));
 
 // Serve frontend static files
+const clientDist = path.join(__dirname, '..', 'client', 'dist');
+if (fs.existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+}
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/stitch', express.static(path.join(__dirname, '..', 'stitch_screens')));
 
@@ -64,6 +69,9 @@ app.use('/api/agents', agentRoutes);
 
 // Catch-all route to serve the Single Page App for any frontend path
 app.get('*', (req, res) => {
+  if (fs.existsSync(path.join(clientDist, 'index.html'))) {
+    return res.sendFile(path.join(clientDist, 'index.html'));
+  }
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 

@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "node server/index.js",
-    "test": "node tests/testCases.test.js"
+    "test": "node tests/testCases.test.js",
+    "build": "npm run build --prefix client",
+    "client": "npm run dev --prefix client"
   },
   "keywords": [
     "data-leakage",
