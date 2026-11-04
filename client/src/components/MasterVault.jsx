@@ -84,3 +84,4 @@ export default function MasterVault({ files = [], onOpenAllocate, onNavigate }) 
     </div>
   );
 }
+

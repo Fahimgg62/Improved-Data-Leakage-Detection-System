@@ -214,3 +214,4 @@ export default function AllocationModal({ file, agents = [], onClose, onSuccess 
     </div>
   );
 }
+

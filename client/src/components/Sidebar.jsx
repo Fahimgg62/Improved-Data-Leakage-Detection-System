@@ -103,3 +103,4 @@ export default function Sidebar({ user, activeTab, onSelectTab, onLogout, assign
     </aside>
   );
 }
+

@@ -153,3 +153,4 @@ export default function Dashboard({ stats, recentLogs = [], onNavigate }) {
     </div>
   );
 }
+

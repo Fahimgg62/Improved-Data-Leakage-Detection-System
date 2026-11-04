@@ -254,3 +254,4 @@ export default function SecureUpload({ onUploadSuccess, onNavigate }) {
     </div>
   );
 }
+
