@@ -1,0 +1,19 @@
+/* Custom LeakTrace Cyber-Forensic Styles */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(79, 107, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(79, 107, 255, 0.4);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite;
+}
+
+.table-row-hover:hover {
+  background-color: rgba(25, 36, 61, 0.6);
+}
+

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#181c20", "surface-bright": "#f7f9ff", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-primary-fixed": "#001a41", "on-error-container": "#93000a", "on-tertiary-fixed": "#002108", "primary-fixed": "#d8e2ff", "surface-dim": "#d7dae0", "on-surface": "#181c20", "on-surface-variant": "#414754", "tertiary-fixed-dim": "#7adb87", "primary-container": "#1a73e8", "surface": "#f7f9ff", "inverse-on-surface": "#eef1f7", "on-tertiary-container": "#000601", "secondary-fixed-dim": "#c3c7cc", "surface-container": "#ebeef4", "tertiary-fixed": "#96f8a1", "inverse-surface": "#2d3135", "surface-container-high": "#e5e8ee", "outline-variant": "#c1c6d6", "surface-variant": "#dfe3e8", "surface-container-highest": "#dfe3e8", "primary-fixed-dim": "#adc7ff", "on-primary-container": "#ffffff", "background": "#f7f9ff", "inverse-primary": "#adc7ff", "surface-container-low": "#f1f4fa", "secondary-fixed": "#dfe3e8", "on-primary-fixed-variant": "#004493", "secondary-container": "#dde0e6", "secondary": "#5b5f64", "tertiary-container": "#24883f", "on-tertiary": "#ffffff", "tertiary": "#006d2b", "on-primary": "#ffffff", "on-secondary-container": "#5f6368", "on-background": "#181c20", "on-secondary": "#ffffff", "outline": "#727785", "on-tertiary-fixed-variant": "#00531f", "error-container": "#ffdad6", "surface-tint": "#005bc0", "on-secondary-fixed-variant": "#43474c", "error": "#ba1a1a", "primary": "#005bbf" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "gutter": "1rem", "margin-desktop": "2rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "margin": "1rem" }, "fontFamily": { "headline-sm": ["Roboto Flex"], "headline-md": ["Roboto Flex"], "label-md": ["Roboto Flex"], "code-sm": ["Roboto Flex"], "headline-lg": ["Roboto Flex"], "headline-lg-mobile": ["Roboto Flex"], "label-sm": ["Roboto Flex"], "body-md": ["Roboto Flex"], "body-lg": ["Roboto Flex"], "body-sm": ["Roboto Flex"], "label-lg": ["Roboto Flex"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 border-b border-outline-variant/50 px-gutter"><div class="h-16 w-full flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm min-w-[240px]"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]">shield_with_heart</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface leading-tight">LeakTrace</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Forensic File Shield</span></div></div><div class="flex-1 max-w-2xl px-space-sm"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-4 text-on-surface-variant text-[20px] pointer-events-none">search</span><input class="w-full h-11 pl-12 pr-10 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md rounded-full border-none focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-none transition-all" placeholder="Search files, agents, audit records..." type="text"/><button class="absolute right-3 p-1 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">tune</span></button></div></div><div class="flex items-center gap-space-xs"><button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Support & Documentation" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button><button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Settings" type="button"><span class="material-symbols-outlined text-[20px]">settings</span></button><div class="relative"><button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-sm ml-space-sm pl-space-sm border-l border-outline-variant/40"><div class="hidden xl:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight font-medium">Sec Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">sec-admin@organization.com</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface z-30 flex flex-col justify-between py-space-md pr-space-md border-r border-outline-variant/40"><div class="flex flex-col"><div class="px-gutter mb-space-lg"><button class="flex items-center gap-space-sm px-space-lg py-3 bg-surface-container-lowest text-on-surface hover:shadow-md hover:bg-surface-bright rounded-full border border-outline-variant/60 shadow-sm transition-all group" type="button"><span class="material-symbols-outlined text-primary text-[24px] group-hover:scale-110 transition-transform">add</span><span class="font-label-lg text-label-lg font-medium">Upload file</span></button></div><nav class="flex flex-col gap-1 w-full" data-active-classes="bg-primary-fixed text-primary font-semibold rounded-r-full"><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="overview-and-files" href="#"><span class="material-symbols-outlined text-[20px]">folder</span><span class="font-body-md text-body-md">Overview & Files</span></a><a aria-current="page" class="flex items-center gap-space-md px-gutter py-space-sm transition-all bg-primary-fixed text-primary font-semibold rounded-r-full" data-path="shared-with-agents" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span class="font-body-md text-body-md">Shared with Agents</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="agents-directory" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Agents Directory</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="leak-analysis" href="#"><span class="material-symbols-outlined text-[20px]">find_in_page</span><span class="font-body-md text-body-md">Leak Analysis</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-body-md text-body-md">Audit Logs</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="px-gutter pt-space-md border-t border-outline-variant/40"><div class="flex items-center gap-space-xs text-on-surface mb-2"><span class="material-symbols-outlined text-[18px] text-primary">cloud_done</span><span class="font-label-md text-label-md font-medium">Storage</span></div><div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden mb-2"><div class="h-full bg-primary rounded-full" style="width: 28%;"></div></div><p class="font-label-sm text-label-sm text-on-surface-variant mb-2">4.2 GB of 15 GB protected storage used</p><a class="inline-flex items-center text-primary hover:underline font-label-md text-label-md font-medium" data-path="settings" href="#">Manage storage</a></div></aside><div class="pl-64 min-h-screen flex flex-col bg-surface"><main class="flex-1 w-full pt-16 bg-surface px-margin-desktop py-space-lg"><div class="flex flex-col w-full">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-sm mb-1">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">folder_shared</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-normal tracking-tight">Shared with Agents</h1>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Upload confidential files, configure unique agent watermarks, and distribute traceable copies with forensic provenance.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap self-start md:self-auto">
+<button class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high shadow-sm hover:shadow transition-all text-label-lg font-label-lg" onclick="exportAuditLog()" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">file_download</span>
+<span>Export distribution log</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-lg py-2.5 rounded-full bg-primary-container text-on-primary-container hover:bg-primary shadow-sm hover:shadow-md transition-all text-label-lg font-label-lg font-medium" onclick="focusUploadWizard()" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Assign new agents</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl mb-space-xl items-start">
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-DEFAULT p-space-xl shadow-sm transition-all" id="uploadWizardCard">
+<div class="flex items-center justify-between mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-medium font-label-md text-label-md">
+            1-2
+          </div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium">Distribution & Forensic Watermarking Wizard</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Inject unique cryptographic watermarks into each distributed copy</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+          Policy: L4 Controlled
+        </span>
+</div>
+<div class="space-y-space-lg">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface font-medium flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">upload_file</span>
+              Step 1: Upload Source Document
+            </label>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Allowed: .txt, .jpg, .bmp</span>
+</div>
+<div class="group relative rounded-DEFAULT p-space-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer text-center" id="dropZone">
+<input accept=".txt,.jpg,.bmp" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="fileInput" onchange="handleFileSelect(event)" type="file"/>
+<div class="flex flex-col items-center justify-center pointer-events-none">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center mb-space-sm group-hover:scale-105 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[26px]">cloud_upload</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium mb-1" id="fileStatusText">
+                Drag and drop <span class="text-primary font-semibold">.txt</span>, <span class="text-primary font-semibold">.jpg</span>, or <span class="text-primary font-semibold">.bmp</span> files here, or browse
+              </p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                Imperceptible pixel-shift & zero-width character injection ready (Max 150 MB)
+              </p>
+</div>
+</div>
+</div>
+<div>
+<label class="font-label-lg text-label-lg text-on-surface font-medium flex items-center gap-space-xs mb-space-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">hub</span>
+            Step 2: Agent Assignment & Target Cohorts
+          </label>
+<div class="flex flex-wrap gap-space-sm">
+<button class="cohort-chip flex items-center gap-2 px-space-md py-1.5 rounded-full bg-primary-fixed text-primary font-label-md text-label-md transition-all shadow-xs" data-cohort="finance" data-count="12" onclick="toggleCohort(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Finance Executives (12)</span>
+</button>
+<button class="cohort-chip flex items-center gap-2 px-space-md py-1.5 rounded-full bg-primary-fixed text-primary font-label-md text-label-md transition-all shadow-xs" data-cohort="legal" data-count="4" onclick="toggleCohort(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Legal Counsel (4)</span>
+</button>
+<button class="cohort-chip flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-all" data-cohort="external" data-count="7" onclick="toggleCohort(this)" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>External Reviewers (7)</span>
+</button>
+<button class="cohort-chip flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-all" data-cohort="executive" data-count="3" onclick="toggleCohort(this)" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Board Observers (3)</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-DEFAULT p-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="pt-0.5">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary accent-primary" id="modeStego" name="watermarkMode" type="radio"/>
+</div>
+<div class="flex-1">
+<label class="font-label-lg text-label-lg text-on-surface font-medium cursor-pointer flex items-center gap-space-xs" for="modeStego">
+                Unique invisible Agent ID embedded per recipient copy
+                <span class="material-symbols-outlined text-secondary text-[16px]" title="Each generated instance carries an imperceptible mathematical watermark mapping directly to the downloader.">info</span>
+</label>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Every agent receives a uniquely encoded payload. If a leak occurs, any raw fragment, snapshot, or document dump immediately resolves to the exact agent ID.
+              </p>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">verified_user</span>
+<span>Targeting <strong class="text-on-surface font-semibold" id="recipientCountDisplay">16</strong> unique watermarked outputs</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-3 rounded-full bg-primary-container text-on-primary-container hover:bg-primary shadow-sm hover:shadow-md transition-all font-label-lg text-label-lg font-medium" id="generateCopiesBtn" onclick="generateAndShare()" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>+ Generate & Share Watermarked Copies</span>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium uppercase tracking-wider">Watermark Telemetry</span>
+<span class="material-symbols-outlined text-[20px] text-primary">analytics</span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-sm">
+<span class="font-headline-lg text-headline-lg font-normal text-on-surface">94.8%</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Verification fidelity</span>
+</div>
+<div class="w-full h-24 mb-space-sm">
+<svg class="w-full h-full text-primary" preserveaspectratio="none" viewbox="0 0 240 70">
+<defs>
+<lineargradient id="metricGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="currentColor" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="currentColor" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,55 Q35,48 70,38 T140,28 T210,18 L240,12 L240,70 L0,70 Z" fill="url(#metricGrad)"></path>
+<path d="M0,55 Q35,48 70,38 T140,28 T210,18 L240,12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<span>Active Master Bundles</span>
+<span class="font-medium text-on-surface">4 Documents</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<span>Steganographic Vectors</span>
+<span class="font-medium text-on-surface">LSB + Zero-Width Unicode</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<span>Tamper Detection Rate</span>
+<span class="font-medium text-tertiary">99.9% Reliable</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">fingerprint</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-medium">Forensic Guarantee</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Files are recompiled byte-by-byte for each recipient. Downloads log an immutable cryptographically stamped token in the vault ledger.
+        </p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT shadow-sm overflow-hidden mb-space-xl">
+<div class="p-space-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px]">table_chart</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium">Active Distribution Records</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Drive master copies with active watermark deployment pipelines</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant px-3 py-1 rounded-full bg-surface-container">4 active files</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-lg font-medium">Master File</th>
+<th class="py-3 px-space-md font-medium">Assigned Agents</th>
+<th class="py-3 px-space-md font-medium">Copies Downloaded</th>
+<th class="py-3 px-space-md font-medium">Status</th>
+<th class="py-3 px-space-md font-medium">Created Date</th>
+<th class="py-3 px-space-lg text-right font-medium">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-body-md">
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group" onclick="selectRecord('Q3_Financials.txt', '12', '12', 'Finance Executives')">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-on-surface block truncate">Q3_Financials.txt</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PlainText Document • 2.4 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">groups</span>
+<span>12 agents assigned</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-20 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">12 / 12</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Complete
+              </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+              Oct 12, 2025
+            </td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Inspect Copies" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="More Options" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group" onclick="selectRecord('exam_paper.jpg', '50', '48', 'Department Examiners')">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">image</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-on-surface block truncate">exam_paper.jpg</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">JPEG Visual • 14.8 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">groups</span>
+<span>50 agents assigned</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-20 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 96%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">48 / 50</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                48 of 50 downloaded
+              </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+              Oct 14, 2025
+            </td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Inspect Copies" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="More Options" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group" onclick="selectRecord('blueprint.bmp', '18', '18', 'Engineering Specialists')">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-on-surface block truncate">blueprint.bmp</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bitmap Graphic • 42.1 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">groups</span>
+<span>18 agents assigned</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-20 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">18 / 18</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Complete
+              </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+              Oct 10, 2025
+            </td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Inspect Copies" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="More Options" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group" onclick="selectRecord('clinical_trial_cohort.txt', '8', '5', 'External Reviewers')">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary-fixed-dim text-on-primary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">biotech</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-on-surface block truncate">clinical_trial_cohort.txt</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Encrypted Text Dump • 1.1 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">groups</span>
+<span>8 agents assigned</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<div class="w-20 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 62.5%;"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">5 / 8</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                5 of 8 downloaded
+              </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+              Oct 08, 2025
+            </td>
+<td class="py-3.5 px-space-lg text-right whitespace-nowrap">
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Inspect Copies" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="More Options" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-xl shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium">Granular Recipient Distribution Ledger</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold" id="activeLedgerTarget">
+              Q3_Financials.txt
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Trace individual downloaded copies mapped to verified Agent Stego IDs</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">filter_list</span>
+<input class="pl-9 pr-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container border-none" placeholder="Filter recipients..." type="text"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-low rounded-DEFAULT p-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-medium font-label-lg text-label-lg">
+              DV
+            </div>
+<div>
+<p class="font-label-lg text-label-lg font-medium text-on-surface leading-tight">Devon K. Vance</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant">ID: AGT-8821</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" title="Cryptographic match valid">verified</span>
+</div>
+<div class="space-y-1.5 pt-space-xs">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Unique Stego Copy</span>
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed px-2 py-0.5 rounded-full">#8821-A</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Download Event</span>
+<span class="text-on-surface font-medium">Oct 12 18:41 UTC</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Extraction Hash</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant truncate max-w-[130px]" title="e3b0c44298fc1c149afbf4c8996fb92427ae41e4">e3b0c442...</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-DEFAULT p-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-medium font-label-lg text-label-lg">
+              ER
+            </div>
+<div>
+<p class="font-label-lg text-label-lg font-medium text-on-surface leading-tight">Elena Rostova</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant">ID: AGT-042</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" title="Cryptographic match valid">verified</span>
+</div>
+<div class="space-y-1.5 pt-space-xs">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Unique Stego Copy</span>
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed px-2 py-0.5 rounded-full">#042-B</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Download Event</span>
+<span class="text-on-surface font-medium">Oct 12 18:32 UTC</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Extraction Hash</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant truncate max-w-[130px]" title="7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1f">7f83b165...</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-DEFAULT p-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-medium font-label-lg text-label-lg">
+              DC
+            </div>
+<div>
+<p class="font-label-lg text-label-lg font-medium text-on-surface leading-tight">David Chen</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant">ID: AGT-043</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]" title="Cryptographic match valid">verified</span>
+</div>
+<div class="space-y-1.5 pt-space-xs">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Unique Stego Copy</span>
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed px-2 py-0.5 rounded-full">#043-C</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Download Event</span>
+<span class="text-on-surface font-medium">Oct 12 18:35 UTC</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Extraction Hash</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant truncate max-w-[130px]" title="a591a6d40bf420404a011733cfb7b190d62c65bf">a591a6d4...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function focusUploadWizard() {
+    const el = document.getElementById('uploadWizardCard');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      el.classList.add('shadow-md');
+      setTimeout(() => {
+        el.classList.remove('shadow-md');
+      }, 1500);
+    }
+  }
+
+  function handleFileSelect(evt) {
+    const file = evt.target.files && evt.target.files[0];
+    const statusText = document.getElementById('fileStatusText');
+    if (file) {
+      statusText.innerHTML = 'Selected: <span class="text-primary font-semibold">' + file.name + '</span> (' + (file.size / 1024 / 1024).toFixed(2) + ' MB)';
+    }
+  }
+
+  function toggleCohort(chip) {
+    const checkIcon = chip.querySelector('.material-symbols-outlined');
+    const isSelected = chip.classList.contains('bg-primary-fixed');
+
+    if (isSelected) {
+      chip.classList.remove('bg-primary-fixed', 'text-primary', 'shadow-xs');
+      chip.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      if (checkIcon) checkIcon.classList.add('hidden');
+    } else {
+      chip.classList.add('bg-primary-fixed', 'text-primary', 'shadow-xs');
+      chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      if (checkIcon) checkIcon.classList.remove('hidden');
+    }
+
+    recalcRecipients();
+  }
+
+  function recalcRecipients() {
+    let total = 0;
+    document.querySelectorAll('.cohort-chip.bg-primary-fixed').forEach(el => {
+      total += parseInt(el.getAttribute('data-count') || '0', 10);
+    });
+    const label = document.getElementById('recipientCountDisplay');
+    if (label) {
+      label.innerText = total.toString();
+    }
+  }
+
+  function generateAndShare() {
+    const btn = document.getElementById('generateCopiesBtn');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Embedding Watermarks...</span>';
+
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">task_alt</span><span>Generated & Dispatched!</span>';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }, 2000);
+    }, 1200);
+  }
+
+  function exportAuditLog() {
+    const csvContent = "MasterFile,Recipient,AgentID,StegoID,Status,DownloadedUTC\\nQ3_Financials.txt,Devon K. Vance,AGT-8821,#8821-A,Downloaded,Oct 12 18:41 UTC\\n";
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'distribution_audit_log.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  }
+
+  function selectRecord(fileName, totalAssigned, downloaded, cohort) {
+    const badge = document.getElementById('activeLedgerTarget');
+    if (badge) {
+      badge.innerText = fileName;
+    }
+  }
+</script></main></div></body></html>

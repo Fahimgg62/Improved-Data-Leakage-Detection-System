@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#181c20", "surface-bright": "#f7f9ff", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-primary-fixed": "#001a41", "on-error-container": "#93000a", "on-tertiary-fixed": "#002108", "primary-fixed": "#d8e2ff", "surface-dim": "#d7dae0", "on-surface": "#181c20", "on-surface-variant": "#414754", "tertiary-fixed-dim": "#7adb87", "primary-container": "#1a73e8", "surface": "#f7f9ff", "inverse-on-surface": "#eef1f7", "on-tertiary-container": "#000601", "secondary-fixed-dim": "#c3c7cc", "surface-container": "#ebeef4", "tertiary-fixed": "#96f8a1", "inverse-surface": "#2d3135", "surface-container-high": "#e5e8ee", "outline-variant": "#c1c6d6", "surface-variant": "#dfe3e8", "surface-container-highest": "#dfe3e8", "primary-fixed-dim": "#adc7ff", "on-primary-container": "#ffffff", "background": "#f7f9ff", "inverse-primary": "#adc7ff", "surface-container-low": "#f1f4fa", "secondary-fixed": "#dfe3e8", "on-primary-fixed-variant": "#004493", "secondary-container": "#dde0e6", "secondary": "#5b5f64", "tertiary-container": "#24883f", "on-tertiary": "#ffffff", "tertiary": "#006d2b", "on-primary": "#ffffff", "on-secondary-container": "#5f6368", "on-background": "#181c20", "on-secondary": "#ffffff", "outline": "#727785", "on-tertiary-fixed-variant": "#00531f", "error-container": "#ffdad6", "surface-tint": "#005bc0", "on-secondary-fixed-variant": "#43474c", "error": "#ba1a1a", "primary": "#005bbf" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "gutter": "1rem", "margin-desktop": "2rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "margin": "1rem" }, "fontFamily": { "headline-sm": ["Roboto Flex"], "headline-md": ["Roboto Flex"], "label-md": ["Roboto Flex"], "code-sm": ["Roboto Flex"], "headline-lg": ["Roboto Flex"], "headline-lg-mobile": ["Roboto Flex"], "label-sm": ["Roboto Flex"], "body-md": ["Roboto Flex"], "body-lg": ["Roboto Flex"], "body-sm": ["Roboto Flex"], "label-lg": ["Roboto Flex"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "16px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 border-b border-outline-variant/50 px-gutter"><div class="h-16 w-full flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm min-w-[240px]"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[24px]">shield_with_heart</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface leading-tight">LeakTrace</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Forensic File Shield</span></div></div><div class="flex-1 max-w-2xl px-space-sm"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-4 text-on-surface-variant text-[20px] pointer-events-none">search</span><input class="w-full h-11 pl-12 pr-10 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md rounded-full border-none focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-none transition-all" placeholder="Search files, agents, audit records..." type="text"/><button class="absolute right-3 p-1 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">tune</span></button></div></div><div class="flex items-center gap-space-xs"><button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Support & Documentation" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button><button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Settings" type="button"><span class="material-symbols-outlined text-[20px]">settings</span></button><div class="relative"><button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><div class="flex items-center gap-space-sm ml-space-sm pl-space-sm border-l border-outline-variant/40"><div class="hidden xl:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight font-medium">Sec Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">sec-admin@organization.com</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface z-30 flex flex-col justify-between py-space-md pr-space-md border-r border-outline-variant/40"><div class="flex flex-col"><div class="px-gutter mb-space-lg"><button class="flex items-center gap-space-sm px-space-lg py-3 bg-surface-container-lowest text-on-surface hover:shadow-md hover:bg-surface-bright rounded-full border border-outline-variant/60 shadow-sm transition-all group" type="button"><span class="material-symbols-outlined text-primary text-[24px] group-hover:scale-110 transition-transform">add</span><span class="font-label-lg text-label-lg font-medium">Upload file</span></button></div><nav class="flex flex-col gap-1 w-full" data-active-classes="bg-primary-fixed text-primary font-semibold rounded-r-full"><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="overview-and-files" href="#"><span class="material-symbols-outlined text-[20px]">folder</span><span class="font-body-md text-body-md">Overview & Files</span></a><a aria-current="page" class="flex items-center gap-space-md px-gutter py-space-sm transition-all bg-primary-fixed text-primary font-semibold rounded-r-full" data-path="shared-with-agents" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span class="font-body-md text-body-md">Shared with Agents</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="agents-directory" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Agents Directory</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="leak-analysis" href="#"><span class="material-symbols-outlined text-[20px]">find_in_page</span><span class="font-body-md text-body-md">Leak Analysis</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="font-body-md text-body-md">Audit Logs</span></a><a class="flex items-center gap-space-md px-gutter py-space-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-r-full transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="px-gutter pt-space-md border-t border-outline-variant/40"><div class="flex items-center gap-space-xs text-on-surface mb-2"><span class="material-symbols-outlined text-[18px] text-primary">cloud_done</span><span class="font-label-md text-label-md font-medium">Storage</span></div><div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden mb-2"><div class="h-full bg-primary rounded-full" style="width: 28%;"></div></div><p class="font-label-sm text-label-sm text-on-surface-variant mb-2">4.2 GB of 15 GB protected storage used</p><a class="inline-flex items-center text-primary hover:underline font-label-md text-label-md font-medium" data-path="settings" href="#">Manage storage</a></div></aside><div class="pl-64 min-h-screen flex flex-col bg-surface"><main class="flex-1 w-full pt-16 bg-surface px-margin-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Portal Header & Identity Banner -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div class="space-y-space-xs max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+        Forensic Identity Validated
+      </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+        My Confidential Files — <span class="font-semibold text-primary">Devon K. Vance</span> <span class="text-on-surface-variant font-normal text-headline-sm">(Agent ID: AGT-8821)</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Files distributed to you are protected by unique invisible watermarks tied to your account. Downloaded copies remain traceable across forensic leak detection scans.
+      </p>
+</div>
+<!-- Quick Telemetry Badge -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-2 px-space-md rounded-full shadow-sm">
+<div class="w-3 h-3 rounded-full bg-tertiary-container animate-pulse"></div>
+<span class="font-label-md text-label-md text-on-surface-variant">Hardware Crypt-Key:</span>
+<span class="font-code-sm text-code-sm text-on-surface bg-surface-container px-2 py-0.5 rounded font-mono">0x4F89..E72A</span>
+</div>
+</div>
+<!-- Security Notice Card (Google Blue M3 Tone) -->
+<div class="bg-primary-fixed/40 rounded-DEFAULT p-space-md mb-space-xl flex items-start gap-space-md shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0 text-on-primary">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-lg text-label-lg font-semibold text-on-primary-fixed">Traceability & Forensics Notice</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm">Policy 4.19.0</span>
+</div>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant leading-relaxed">
+        Each document downloaded through this portal contains an imperceptible digital identifier bound to your credentials (<span class="font-semibold text-on-primary-fixed">AGT-8821</span>). Redistribution, screen capture parsing, or unauthorized file forwarding remains mathematically linked to your authorized profile.
+      </p>
+</div>
+<button class="shrink-0 p-2 rounded-full text-on-surface-variant hover:bg-primary-fixed/60 transition-colors" title="Dismiss advice" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Workspace Controls & Filter Pills -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md mb-space-lg">
+<!-- Filter Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 sm:pb-0" id="filter-container">
+<button class="filter-chip flex items-center gap-2 px-4 py-2 rounded-full bg-primary-fixed text-primary font-label-md text-label-md transition-all shadow-sm" onclick="setFilter('all', this)" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+        All files (7)
+      </button>
+<button class="filter-chip flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all shadow-sm" onclick="setFilter('expiring', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+        Expiring soon (2)
+      </button>
+<button class="filter-chip flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-all shadow-sm" onclick="setFilter('downloaded', this)" type="button">
+<span class="material-symbols-outlined text-[16px]">download_done</span>
+        Downloaded (4)
+      </button>
+</div>
+<!-- Layout & Ordering Toggle -->
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<div class="flex items-center bg-surface-container-low rounded-full p-1 shadow-sm">
+<button class="p-1.5 rounded-full bg-surface-container-lowest text-primary shadow-xs transition-colors" id="view-grid-btn" onclick="toggleLayout('grid')" title="Grid View">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" id="view-list-btn" onclick="toggleLayout('list')" title="List View">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+        Sort: Last shared
+      </button>
+</div>
+</div>
+<!-- Document Presentation Space: Grid Mode -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl" id="file-grid">
+<!-- File 1: Q3_Financials.txt -->
+<div class="file-item group flex flex-col justify-between bg-surface-container-lowest rounded-DEFAULT p-space-md hover:shadow-md transition-all duration-200" data-expiry="3days" data-status="available">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">description</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed/50 text-primary font-label-sm text-label-sm font-medium">Available</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors" title="Q3_Financials.txt">Q3_Financials.txt</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-space-sm truncate">Finance & Strategy</p>
+<div class="space-y-1.5 py-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Size</span>
+<span class="font-code-sm text-code-sm text-on-surface">18.4 KB</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Access Expiry</span>
+<span class="text-tertiary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+              Expires in 3 days
+            </span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm bg-gradient-to-t from-surface-container-low/30 to-transparent rounded-b-DEFAULT">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-primary text-on-primary hover:bg-primary-container shadow-sm hover:shadow transition-all group-hover:shadow-md" onclick="triggerDownload('Q3_Financials.txt', '18.4 KB')" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="font-label-md text-label-md font-medium">Download Watermarked Copy</span>
+</button>
+</div>
+</div>
+<!-- File 2: exam_paper.jpg -->
+<div class="file-item group flex flex-col justify-between bg-surface-container-lowest rounded-DEFAULT p-space-md hover:shadow-md transition-all duration-200" data-expiry="urgent" data-status="downloaded">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<div class="w-12 h-12 rounded-xl bg-error-container/40 flex items-center justify-center text-error group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">image</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] animate-pulse">timer</span> Expiring Soon
+          </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors" title="exam_paper.jpg">exam_paper.jpg</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-space-sm truncate">Applied Ciphers Midterm</p>
+<div class="space-y-1.5 py-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Size</span>
+<span class="font-code-sm text-code-sm text-on-surface">2.8 MB</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Access Expiry</span>
+<span class="text-error font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+              Expires in 2 hours
+            </span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm bg-gradient-to-t from-surface-container-low/30 to-transparent rounded-b-DEFAULT">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant shadow-none transition-all" onclick="triggerDownload('exam_paper.jpg', '2.8 MB')" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span class="font-label-md text-label-md font-medium">Download Again</span>
+</button>
+</div>
+</div>
+<!-- File 3: blueprint.bmp -->
+<div class="file-item group flex flex-col justify-between bg-surface-container-lowest rounded-DEFAULT p-space-md hover:shadow-md transition-all duration-200" data-expiry="14days" data-status="downloaded">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">architecture</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium">Downloaded Oct 10</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors" title="blueprint.bmp">blueprint.bmp</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-space-sm truncate">Architecture Schematic</p>
+<div class="space-y-1.5 py-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Size</span>
+<span class="font-code-sm text-code-sm text-on-surface">24.1 MB</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Access Expiry</span>
+<span class="text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event_available</span>
+              Expires in 14 days
+            </span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm bg-gradient-to-t from-surface-container-low/30 to-transparent rounded-b-DEFAULT">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant shadow-none transition-all" onclick="triggerDownload('blueprint.bmp', '24.1 MB')" type="button">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span class="font-label-md text-label-md font-medium">Download Again</span>
+</button>
+</div>
+</div>
+<!-- File 4: clinical_trial_cohort.txt -->
+<div class="file-item group flex flex-col justify-between bg-surface-container-lowest rounded-DEFAULT p-space-md hover:shadow-md transition-all duration-200" data-expiry="30days" data-status="available">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/40 flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">clinical_notes</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-medium">Pending view</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors" title="clinical_trial_cohort.txt">clinical_trial_cohort.txt</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mb-space-sm truncate">Medical Research Div</p>
+<div class="space-y-1.5 py-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Size</span>
+<span class="font-code-sm text-code-sm text-on-surface">4.2 MB</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Access Expiry</span>
+<span class="text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+              Expires in 30 days
+            </span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm bg-gradient-to-t from-surface-container-low/30 to-transparent rounded-b-DEFAULT">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-primary text-on-primary hover:bg-primary-container shadow-sm hover:shadow transition-all group-hover:shadow-md" onclick="triggerDownload('clinical_trial_cohort.txt', '4.2 MB')" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="font-label-md text-label-md font-medium">Download Watermarked Copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Document Presentation Space: List View (Initially Hidden) -->
+<div class="hidden flex-col bg-surface-container-lowest rounded-DEFAULT overflow-hidden shadow-sm mb-space-xl" id="file-list">
+<div class="grid grid-cols-12 px-space-md py-3 bg-surface-container font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-5">Name & Category</div>
+<div class="col-span-2">Status</div>
+<div class="col-span-2">File Size</div>
+<div class="col-span-2">Expiry</div>
+<div class="col-span-1 text-right">Action</div>
+</div>
+<!-- Row 1 -->
+<div class="grid grid-cols-12 px-space-md py-3.5 items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div class="truncate">
+<div class="font-label-lg text-label-lg font-medium text-on-surface truncate">Q3_Financials.txt</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">Finance & Strategy</div>
+</div>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/50 text-primary font-label-sm text-label-sm">Available</span>
+</div>
+<div class="col-span-2 font-code-sm text-code-sm text-on-surface">18.4 KB</div>
+<div class="col-span-2 font-label-sm text-label-sm text-tertiary">Expires in 3 days</div>
+<div class="col-span-1 text-right">
+<button class="p-2 rounded-full text-primary hover:bg-primary-fixed/50" onclick="triggerDownload('Q3_Financials.txt', '18.4 KB')" title="Download copy" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 px-space-md py-3.5 items-center hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<div class="col-span-5 flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-error-container/40 flex items-center justify-center text-error shrink-0">
+<span class="material-symbols-outlined text-[20px]">image</span>
+</div>
+<div class="truncate">
+<div class="font-label-lg text-label-lg font-medium text-on-surface truncate">exam_paper.jpg</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">Applied Ciphers Midterm</div>
+</div>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Downloaded Oct 14</span>
+</div>
+<div class="col-span-2 font-code-sm text-code-sm text-on-surface">2.8 MB</div>
+<div class="col-span-2 font-label-sm text-label-sm text-error font-medium">Expires in 2 hours</div>
+<div class="col-span-1 text-right">
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container" onclick="triggerDownload('exam_paper.jpg', '2.8 MB')" title="Download Again" type="button">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 px-space-md py-3.5 items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+</div>
+<div class="truncate">
+<div class="font-label-lg text-label-lg font-medium text-on-surface truncate">blueprint.bmp</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">Architecture Schematic</div>
+</div>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Downloaded Oct 10</span>
+</div>
+<div class="col-span-2 font-code-sm text-code-sm text-on-surface">24.1 MB</div>
+<div class="col-span-2 font-label-sm text-label-sm text-on-surface-variant">Expires in 14 days</div>
+<div class="col-span-1 text-right">
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container" onclick="triggerDownload('blueprint.bmp', '24.1 MB')" title="Download Again" type="button">
+<span class="material-symbols-outlined text-[20px]">replay</span>
+</button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-12 px-space-md py-3.5 items-center hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<div class="col-span-5 flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed/40 flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[20px]">clinical_notes</span>
+</div>
+<div class="truncate">
+<div class="font-label-lg text-label-lg font-medium text-on-surface truncate">clinical_trial_cohort.txt</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant truncate">Medical Research Div</div>
+</div>
+</div>
+<div class="col-span-2">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">Pending view</span>
+</div>
+<div class="col-span-2 font-code-sm text-code-sm text-on-surface">4.2 MB</div>
+<div class="col-span-2 font-label-sm text-label-sm text-on-surface-variant">Expires in 30 days</div>
+<div class="col-span-1 text-right">
+<button class="p-2 rounded-full text-primary hover:bg-primary-fixed/50" onclick="triggerDownload('clinical_trial_cohort.txt', '4.2 MB')" title="Download copy" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Forensic Activity & Download History -->
+<div class="flex flex-col bg-surface-container-lowest rounded-DEFAULT shadow-sm p-space-lg mb-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+          My Download & Forensic Trace Log
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Audit proof of files rendered with unique stenographic patterns for Agent Devon K. Vance.
+        </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1 bg-tertiary-fixed/30 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+          Zero-Tamper Watermark Engine Online
+        </span>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto rounded-DEFAULT bg-surface">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant">
+<th class="py-3 px-space-md font-medium">File Name</th>
+<th class="py-3 px-space-md font-medium">Download Date/Time</th>
+<th class="py-3 px-space-md font-medium">Watermark ID (Invisible Hash)</th>
+<th class="py-3 px-space-md font-medium">Device & IP Footprint</th>
+<th class="py-3 px-space-md font-medium text-right">Verification</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm text-on-surface">
+<!-- Log 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">image</span>
+              exam_paper.jpg
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              Oct 14, 2024 • 14:28:11 UTC
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-code-sm text-code-sm bg-surface-container-lowest px-2 py-1 rounded font-mono text-primary shadow-xs">
+                WM-8821-EXP-9014-F2
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<span>MacBookPro18,1</span> • <span class="font-mono text-label-sm">192.88.99.14</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                Intact & Valid
+              </span>
+</td>
+</tr>
+<!-- Log 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">architecture</span>
+              blueprint.bmp
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              Oct 10, 2024 • 09:12:44 UTC
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-code-sm text-code-sm bg-surface-container-lowest px-2 py-1 rounded font-mono text-primary shadow-xs">
+                WM-8821-BLU-4029-A1
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<span>MacBookPro18,1</span> • <span class="font-mono text-label-sm">192.88.99.14</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                Intact & Valid
+              </span>
+</td>
+</tr>
+<!-- Log 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">description</span>
+              executive_brief_q2.pdf
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              Sep 28, 2024 • 19:40:02 UTC
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-code-sm text-code-sm bg-surface-container-lowest px-2 py-1 rounded font-mono text-primary shadow-xs">
+                WM-8821-DOC-7721-X9
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<span>Workstation Linux 6.4</span> • <span class="font-mono text-label-sm">172.16.4.108</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                Archived Log
+              </span>
+</td>
+</tr>
+<!-- Log 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">table_chart</span>
+              salary_bands_v2.xlsx
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+              Sep 15, 2024 • 11:05:19 UTC
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-code-sm text-code-sm bg-surface-container-lowest px-2 py-1 rounded font-mono text-primary shadow-xs">
+                WM-8821-SLR-1144-C3
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<span>MacBookPro18,1</span> • <span class="font-mono text-label-sm">192.88.99.14</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                Intact & Valid
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Audit Note -->
+<div class="mt-space-md pt-space-sm flex flex-col sm:flex-row items-center justify-between text-on-surface-variant font-label-sm text-label-sm gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">info</span>
+        Log retention cycle: 180 days under ISO-27001 Agent Tracking compliance.
+      </div>
+<a class="text-primary hover:underline font-medium inline-flex items-center gap-1" href="#">
+        Export Audit Certificate (.json)
+        <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Notification Toast Simulation Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toast-container"></div>
+<!-- Client-Side Micro-Interactions -->
+<script>
+    function triggerDownload(fileName, size) {
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-DEFAULT shadow-lg flex items-center gap-3 transform translate-y-4 opacity-0 transition-all duration-300';
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-tertiary-fixed text-[20px]">enhanced_encryption</span>
+        <div class="flex flex-col">
+          <span class="font-label-md text-label-md font-medium">Encoding Watermark for AGT-8821</span>
+          <span class="font-body-sm text-body-sm text-surface-variant">${fileName} (${size}) preparing for download...</span>
+        </div>
+      `;
+      const container = document.getElementById('toast-container');
+      container.appendChild(toast);
+
+      // Trigger enter animation
+      setTimeout(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      }, 20);
+
+      // Auto dismiss
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    function toggleLayout(type) {
+      const grid = document.getElementById('file-grid');
+      const list = document.getElementById('file-list');
+      const gridBtn = document.getElementById('view-grid-btn');
+      const listBtn = document.getElementById('view-list-btn');
+
+      if (type === 'list') {
+        grid.classList.add('hidden');
+        list.classList.remove('hidden');
+        list.classList.add('flex');
+        
+        listBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        listBtn.classList.remove('text-on-surface-variant');
+        gridBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        gridBtn.classList.add('text-on-surface-variant');
+      } else {
+        list.classList.add('hidden');
+        list.classList.remove('flex');
+        grid.classList.remove('hidden');
+
+        gridBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        gridBtn.classList.remove('text-on-surface-variant');
+        listBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+        listBtn.classList.add('text-on-surface-variant');
+      }
+    }
+
+    function setFilter(category, button) {
+      // Toggle button styles
+      document.querySelectorAll('.filter-chip').forEach(btn => {
+        btn.classList.remove('bg-primary-fixed', 'text-primary');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+      });
+      button.classList.add('bg-primary-fixed', 'text-primary');
+      button.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+
+      // Filter grid cards
+      const items = document.querySelectorAll('.file-item');
+      items.forEach(card => {
+        if (category === 'all') {
+          card.classList.remove('hidden');
+        } else if (category === 'expiring') {
+          const isExp = card.getAttribute('data-expiry') === 'urgent' || card.getAttribute('data-expiry') === '3days';
+          card.classList.toggle('hidden', !isExp);
+        } else if (category === 'downloaded') {
+          const isDownloaded = card.getAttribute('data-status') === 'downloaded';
+          card.classList.toggle('hidden', !isDownloaded);
+        }
+      });
+    }
+  </script>
+</div></main></div></body></html>

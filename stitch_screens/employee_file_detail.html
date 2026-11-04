@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#ffb68f","surface-variant":"#2e3544","on-primary-container":"#001a7f","on-primary-fixed":"#00105b","surface-container-highest":"#2e3544","primary":"#bac3ff","background":"#0c1321","secondary":"#5de6ff","primary-container":"#7287ff","secondary-fixed-dim":"#2fd9f4","inverse-primary":"#2d4ce2","surface-container-low":"#151b2a","outline":"#8e8fa1","error-container":"#93000a","inverse-surface":"#dce2f6","on-tertiary-fixed":"#331200","on-surface-variant":"#c5c5d8","on-secondary-container":"#00515d","error":"#ffb4ab","secondary-fixed":"#a2eeff","on-error":"#690005","outline-variant":"#444655","on-tertiary":"#542100","surface-container-high":"#232a39","tertiary-fixed":"#ffdbca","on-secondary":"#00363e","on-tertiary-fixed-variant":"#773200","primary-fixed-dim":"#bac3ff","surface":"#0c1321","on-primary":"#001f90","on-primary-fixed-variant":"#002fc9","surface-container":"#19202e","surface-tint":"#bac3ff","on-background":"#dce2f6","inverse-on-surface":"#2a3040","on-tertiary-container":"#491c00","on-surface":"#dce2f6","secondary-container":"#00cbe6","surface-container-lowest":"#070e1c","tertiary-container":"#e66f1e","tertiary-fixed-dim":"#ffb68f","on-error-container":"#ffdad6","on-secondary-fixed":"#001f25","surface-dim":"#0c1321","surface-bright":"#323949","primary-fixed":"#dee0ff","on-secondary-fixed-variant":"#004e5a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-lg":"1.5rem","margin":"1rem","gutter":"1rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","margin-desktop":"2rem","space-sm":"0.5rem","space-md":"1rem"},"fontFamily":{"body-md":["Inter"],"body-sm":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"headline-xl-mobile":["Inter"],"headline-sm":["Inter"],"headline-lg-mobile":["Inter"],"headline-xl":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"label-md":["Inter"],"code-sm":["monospace"],"code-md":["monospace"]},"fontSize":{"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg-mobile":["22px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"code-sm":["11px",{"lineHeight":"16px","fontWeight":"400"}],"code-md":["13px",{"lineHeight":"20px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-low/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.24)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[22px]">shield_lock</span><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold">LeakTrace</span></div><span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-code-sm text-code-sm border border-secondary/30 uppercase tracking-wider">Recipient Enclave</span></div><nav class="flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary"><a class="px-space-sm py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="my-files" href="#">My Files</a><a class="px-space-sm py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="profile-hardware-enclave" href="#">Profile &amp; Hardware Enclave</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-code-sm text-code-sm text-secondary">Enclave Bound: YubiKey / Apple T2 Verified</span><span class="text-outline-variant font-code-sm text-code-sm">|</span><span class="font-code-sm text-code-sm text-on-surface-variant">Zero-Leak Trace Active</span></div><button aria-label="Notifications" class="p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-secondary rounded-full"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-none">Devon K. Vance</span><span class="font-code-sm text-code-sm text-on-surface-variant leading-none mt-1">AGT-8821</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div><a class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[16px] text-error">logout</span><span>Logout</span></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)] px-gutter-desktop py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Utility Context Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-space-sm mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-xs text-secondary hover:text-secondary-fixed transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to My Files</span>
+</a>
+<span class="text-outline-variant font-code-sm text-code-sm">/</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm">DOC-7729-STEG</span>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high text-secondary font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>Enclave Document Custody View • AGT-8821</span>
+</div>
+</div>
+</div>
+<!-- Document Master Hero Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low shadow-xl p-space-lg mb-space-lg">
+<div class="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md">
+<!-- File Format Glyphic Container -->
+<div class="relative flex-shrink-0 w-16 h-20 rounded-lg bg-surface-container-high flex flex-col items-center justify-between p-2 shadow-inner">
+<span class="material-symbols-outlined text-secondary text-[26px]">description</span>
+<div class="w-full text-center py-0.5 rounded bg-surface-container-lowest font-code-sm text-code-sm text-secondary tracking-widest uppercase font-bold">
+            .TXT
+          </div>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-error-container/30 text-error font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              RESTRICTED // CUSTODIAL ATTESTATION
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm">
+              Level-5 Asset
+            </span>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified_user</span> Hardware-Attested
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight truncate mt-1">
+            Executive_Strategy_Brief_2025.txt
+          </h1>
+<div class="flex items-center gap-space-sm mt-1 flex-wrap">
+<div class="inline-flex items-center gap-1.5 px-space-xs py-0.5 rounded bg-surface-container-lowest font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-outline">SHA-256:</span>
+<span class="text-on-surface font-mono" id="sha-hash">4a9e21b88f1c07ad32f1469e5d2b77af8819001b9ca9</span>
+<button class="ml-1 text-secondary hover:text-secondary-fixed transition-colors font-label-sm text-label-sm inline-flex items-center gap-0.5" onclick="navigator.clipboard.writeText('4a9e21b88f1c07ad32f1469e5d2b77af8819001b9ca9'); const el=this.querySelector('.copy-txt'); el.textContent='Copied'; setTimeout(()=&gt;el.textContent='Copy', 1500);" title="Copy Checksum" type="button">
+<span class="material-symbols-outlined text-[12px]">content_copy</span>
+<span class="copy-txt">Copy</span>
+</button>
+</div>
+<span class="text-outline-variant font-code-sm text-code-sm">•</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Stego Carrier Payload • 2.4 MB</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Mini Pill -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<div class="px-space-md py-space-sm rounded-lg bg-surface-container-high flex items-center gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-tertiary-container animate-pulse"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Custody State</span>
+<span class="font-label-md text-label-md text-tertiary font-semibold">Pending Initial Download</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mandatory Confidentiality & Forensic Watermark Notice -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md lg:p-space-lg mb-space-lg shadow-md">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-secondary via-primary to-secondary"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pl-space-xs">
+<div class="flex items-start gap-space-md">
+<div class="p-2.5 rounded-lg bg-surface-container-high text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">fingerprint</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-secondary uppercase tracking-wider">
+              CONFIDENTIALITY &amp; FORENSIC TRACKING NOTICE
+            </span>
+<span class="px-1.5 py-0.2 rounded bg-secondary/10 text-secondary font-code-sm text-code-sm uppercase">Active Enclave Guard</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-4xl">
+            This file is uniquely tracked with an imperceptible cryptographic watermark bound to your hardware enclave and identity (<span class="text-on-surface font-semibold">Devon K. Vance, AGT-8821</span>). Any unauthorized distribution, exfiltration, screen capture, or copy will be forensically attributed back to your custodial token. Do not share, forward, or duplicate outside authorized secure enclaves.
+          </p>
+</div>
+</div>
+<!-- Telemetry Chip -->
+<div class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start md:items-end lg:items-center gap-space-xs flex-shrink-0 bg-surface-container-high p-space-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[16px]">qr_code_2</span>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-outline font-mono">Stego Signature</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono font-semibold">WM-8821-****-4F02</span>
+</div>
+<span class="hidden lg:inline text-outline-variant font-code-sm text-code-sm">|</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant font-code-sm text-code-sm">Zero-Degradation Embed</span>
+</div>
+</div>
+</div>
+<!-- Tripartite / Two-Column Master Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Main Metadata & Download Action Card (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Metadata Matrix Card -->
+<div class="rounded-xl bg-surface-container-low shadow-md overflow-hidden">
+<div class="px-space-lg py-space-md bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">File Parameters &amp; Custodial Envelope</h2>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Attestation Node: 0x8821-E2EE</span>
+</div>
+<div class="p-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Metadata Row 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Filename</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">draft</span>
+<span class="font-code-md text-code-md text-on-surface font-semibold truncate">Executive_Strategy_Brief_2025.txt</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">File Format / Carrier</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">layers</span>
+<span class="font-body-md text-body-md text-on-surface">Plaintext (.txt) — Stego Parity Carrier</span>
+</div>
+</div>
+<!-- Metadata Row 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Payload Size</span>
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md text-on-surface font-semibold">2.4 MB</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">2,516,582 bytes</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Download Custody Status</span>
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Unopened Personal Copy
+                </span>
+</div>
+</div>
+<!-- Metadata Row 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Shared By Originator</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[18px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Sec Admin (SOC Operator)</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Root OP-5 Cluster #01</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Timestamp Shared</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Oct 15, 2025</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">14:32:08 UTC</span>
+</div>
+</div>
+</div>
+<!-- Metadata Row 4 -->
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Assigned Custodian</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">badge</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Devon K. Vance</span>
+<span class="font-code-sm text-code-sm text-secondary">VP Corporate Strategy • AGT-8821</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Security Clearance Tier</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">policy</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">OP-Level 5 (Special Custody)</span>
+</div>
+</div>
+<!-- Metadata Row 5 -->
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Enclave Destination Binding</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">terminal</span>
+<span class="font-code-sm text-code-sm text-on-surface">Apple T2 Node (192.88.99.14)</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Custodial Expiration</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[18px]">event_busy</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Dec 31, 2025</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Auto-wipe on token revoke</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary Download Action Block -->
+<div class="rounded-xl bg-surface-container-low shadow-xl p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">download_for_offline</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Secure Recipient Retrieval</h2>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-code-sm text-code-sm">YubiKey Attested</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+          Executing this download compiles your personal decrypted instance from the HSM vault with your hardware-bound steganographic watermark baked directly into the carrier whitespace sequence.
+        </p>
+<!-- Acknowledgment Checkbox -->
+<div class="p-space-md rounded-lg bg-surface-container mb-space-lg">
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded bg-surface-container-lowest text-primary accent-primary focus:ring-0 focus:outline-none cursor-pointer" id="watermark-ack" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">
+              I acknowledge that this downloaded copy is cryptographically marked with my forensic custody signature (<span class="font-code-sm text-code-sm text-secondary font-mono">AGT-8821</span>) and bound to my hardware session.
+            </span>
+</label>
+</div>
+<!-- Big CTA Button -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md">
+<button class="flex-1 py-3 px-space-lg rounded-lg bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-headline-sm text-headline-sm font-semibold transition-all duration-150 flex items-center justify-center gap-space-sm shadow-lg hover:shadow-primary/20" id="btn-download" onclick="const btn=this; const orig=btn.innerHTML; btn.innerHTML='&lt;span class=\'material-symbols-outlined animate-spin text-[20px]\'&gt;sync&lt;/span&gt;&lt;span&gt;Generating Personal Enclave Copy...&lt;/span&gt;'; setTimeout(()=&gt;{ btn.innerHTML='&lt;span class=\'material-symbols-outlined text-[20px]\'&gt;check_circle&lt;/span&gt;&lt;span&gt;Download Complete (Decrypted)&lt;/span&gt;'; btn.classList.replace('bg-primary-container','bg-surface-container-highest'); }, 2200);" type="button">
+<span class="material-symbols-outlined text-[22px]">shield_locked</span>
+<span>Download My Copy (2.4 MB)</span>
+</button>
+</div>
+<!-- Auxiliary Action Links -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mt-space-md pt-space-md bg-surface-container-low">
+<button class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-secondary font-label-md text-label-md transition-colors" onclick="alert('Downloading cryptographic attestation manifest: AGT-8821-RECEIPT-2025.json');" type="button">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Download Hardware Attestation Receipt (.json)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" onclick="document.getElementById('terms-modal').classList.toggle('hidden');" type="button">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span>View Custody Terms</span>
+</button>
+</div>
+<!-- Hidden In-place Custody Terms Modal -->
+<div class="hidden mt-space-md p-space-md rounded-lg bg-surface-container-lowest" id="terms-modal">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Custodial Security Agreement Summary</span>
+<button class="text-outline hover:text-on-surface font-code-sm text-code-sm" onclick="document.getElementById('terms-modal').classList.add('hidden');" type="button">Close ✕</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            By receiving this document, the recipient agrees that the embedded steganographic watermark is permanently bound to Agent UUID AGT-8821. Under LeakTrace Security Policy SP-409, retention beyond Dec 31, 2025 or extraction to non-enclave workstations constitutes an actionable custodial violation.
+          </p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Custody Verification & Security Context (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Card: Custody Certificate & Attestation -->
+<div class="rounded-xl bg-surface-container-low shadow-md overflow-hidden">
+<div class="px-space-lg py-space-md bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Your Custody Certificate</h3>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Steganographic Token ID</span>
+<span class="font-code-md text-code-md text-secondary font-mono font-semibold">WM-8821-****-4F02</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-code-sm text-code-sm">Active Enclave</span>
+</div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Hardware Key Attestation</span>
+<span class="font-code-md text-code-md text-on-surface font-mono">Apple T2 Secure Enclave #9921-OK</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+</div>
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Network Route Binding</span>
+<span class="font-code-md text-code-md text-on-surface font-mono">Pinned to 192.88.99.14</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">lock</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Anti-Tamper Checksum</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-mono">Verified against Genesis HSM #88,419</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-code-sm text-code-sm">VALID</span>
+</div>
+<!-- Micro Cryptographic Visualizer SVG -->
+<div class="mt-space-xs p-space-sm rounded-lg bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<svg class="w-8 h-8 text-secondary flex-shrink-0" fill="none" viewbox="0 0 36 36">
+<circle cx="18" cy="18" r="14" stroke="currentColor" stroke-opacity="0.2" stroke-width="2"></circle>
+<path d="M18 4 A14 14 0 0 1 32 18" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="18" cy="18" fill="currentColor" r="4"></circle>
+</svg>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Zero-Leak Watermark Seal</span>
+<span class="font-code-sm text-code-sm text-outline">Entropy: 256-bit cryptovariable</span>
+</div>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-mono">100% Integrity</span>
+</div>
+</div>
+</div>
+<!-- Card: File Guidelines & Permitted Uses -->
+<div class="rounded-xl bg-surface-container-low shadow-md overflow-hidden">
+<div class="px-space-lg py-space-md bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">rule</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">File Guidelines &amp; Permitted Uses</h3>
+</div>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Permitted list -->
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold block mb-space-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Permitted Workflows
+            </span>
+<ul class="flex flex-col gap-1.5 pl-1 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="text-secondary text-[12px] mt-1">•</span>
+<span>Viewing on registered Apple T2 workstation (<span class="font-mono text-on-surface">192.88.99.14</span>).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-secondary text-[12px] mt-1">•</span>
+<span>Editing inside local encrypted container with ephemeral swap lock.</span>
+</li>
+</ul>
+</div>
+<div class="w-full h-px bg-surface-container"></div>
+<!-- Strictly Prohibited list -->
+<div>
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider font-bold block mb-space-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">block</span> Strictly Prohibited Actions
+            </span>
+<ul class="flex flex-col gap-1.5 pl-1 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="text-error text-[12px] mt-1">✕</span>
+<span>Email attachments or unencrypted internal transit.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-error text-[12px] mt-1">✕</span>
+<span>Transfer to unsanctioned personal cloud drives or external USBs.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-error text-[12px] mt-1">✕</span>
+<span>Physical printing without dynamic custodial watermark overlay.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Card: Assistance & Access Update -->
+<div class="rounded-xl bg-surface-container-low shadow-md p-space-md flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">contact_support</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Need access update or key rebind?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Contact the Security Operations Center</span>
+</div>
+</div>
+<a class="px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-secondary hover:text-secondary-fixed font-code-sm text-code-sm transition-colors flex-shrink-0 flex items-center gap-1" href="mailto:soc-admin@leaktrace-sec.corp">
+<span class="material-symbols-outlined text-[14px]">mail</span>
+<span>Contact SOC</span>
+</a>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest"><div class="w-full px-gutter-desktop py-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs font-code-sm text-code-sm text-outline"><span class="material-symbols-outlined text-[14px] text-secondary">fingerprint</span><span>Cryptographic Envelope ID: 0x8821-E2EE-LEAKTRACE</span></div><div class="font-body-sm text-body-sm text-outline">© 2024 LeakTrace Enclave Systems. Hardware-attested recipient endpoint.</div></div></footer></body></html>

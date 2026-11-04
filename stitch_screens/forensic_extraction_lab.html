@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#bac3ff", "error-container": "#93000a", "surface-bright": "#323949", "tertiary-fixed-dim": "#ffb68f", "background": "#0c1321", "surface-variant": "#2e3544", "outline-variant": "#444655", "on-secondary-fixed": "#001f25", "on-error": "#690005", "surface-container-high": "#232a39", "secondary-container": "#00cbe6", "on-surface": "#dce2f6", "surface": "#0c1321", "on-tertiary": "#542100", "on-primary-fixed": "#00105b", "tertiary-container": "#e66f1e", "inverse-primary": "#2d4ce2", "primary-fixed": "#dee0ff", "on-error-container": "#ffdad6", "secondary-fixed": "#a2eeff", "primary-container": "#7287ff", "on-tertiary-fixed-variant": "#773200", "secondary-fixed-dim": "#2fd9f4", "tertiary-fixed": "#ffdbca", "error": "#ffb4ab", "surface-dim": "#0c1321", "on-primary": "#001f90", "surface-container": "#19202e", "surface-container-lowest": "#070e1c", "on-secondary": "#00363e", "surface-container-highest": "#2e3544", "on-secondary-fixed-variant": "#004e5a", "on-tertiary-container": "#491c00", "on-primary-container": "#001a7f", "inverse-surface": "#dce2f6", "secondary": "#5de6ff", "on-background": "#dce2f6", "surface-container-low": "#151b2a", "on-primary-fixed-variant": "#002fc9", "on-surface-variant": "#c5c5d8", "inverse-on-surface": "#2a3040", "outline": "#8e8fa1", "on-secondary-container": "#00515d", "surface-tint": "#bac3ff", "tertiary": "#ffb68f", "primary-fixed-dim": "#bac3ff", "on-tertiary-fixed": "#331200" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "1rem", "gutter-desktop": "1.5rem", "space-md": "1rem", "gutter": "1rem", "space-xl": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "label-sm": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl": ["Inter"], "headline-md": ["Inter"], "code-sm": ["monospace"], "headline-lg": ["Inter"], "body-md": ["Inter"], "code-md": ["monospace"], "headline-lg-mobile": ["Inter"], "headline-xl-mobile": ["Inter"], "label-md": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "code-sm": ["11px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "code-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="p-space-lg flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center"><span class="material-symbols-outlined text-secondary">fingerprint</span></div><div><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface block">LeakTrace</span><span class="font-code-sm text-code-sm text-outline block">FORENSIC PLATFORM</span></div></div><div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm w-fit"><span class="material-symbols-outlined text-[14px]">verified_user</span><span>FIPS-140-3 Compliant</span></div></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-sm" data-active-classes="bg-primary-container text-on-primary font-medium rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard-and-overview" href="#"><span class="material-symbols-outlined text-base">dashboard</span><span class="font-body-md text-body-md">Dashboard & Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="secure-file-vault-and-distribution" href="#"><span class="material-symbols-outlined text-base">lock</span><span class="font-body-md text-body-md">Secure File Vault & Distribution</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-medium rounded-lg" data-path="forensic-extraction-lab" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-base text-secondary">csv</span><span class="font-body-md text-body-md">Forensic Extraction Lab</span></div><span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-code-sm text-code-sm uppercase">LAB</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="agent-and-recipient-directory" href="#"><span class="material-symbols-outlined text-base">group</span><span class="font-body-md text-body-md">Agent & Recipient Directory</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tamper-audit-logs" href="#"><span class="material-symbols-outlined text-base">history_toggle_off</span><span class="font-body-md text-body-md">Tamper Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="security-settings" href="#"><span class="material-symbols-outlined text-base">tune</span><span class="font-body-md text-body-md">Security Settings</span></a></nav></div><div class="p-space-md flex flex-col gap-space-md bg-surface-container-lowest"><div class="flex flex-col gap-space-xs p-space-sm rounded-lg bg-surface-container"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant">Encrypted Engine</span><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-code-sm text-code-sm text-secondary font-semibold">ONLINE</span></div></div><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant">Steganographic Lattice</span><span class="font-code-sm text-code-sm text-on-surface font-semibold">ACTIVE</span></div></div><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-high cursor-pointer hover:bg-surface-variant transition-colors"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-base text-primary">admin_panel_settings</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Admin Mode</span><span class="font-code-sm text-code-sm text-on-surface-variant">Privilege L3</span></div></div><span class="material-symbols-outlined text-base text-on-surface-variant">unfold_more</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md w-1/2 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span><input class="w-full bg-surface-container-lowest text-on-surface pl-10 pr-12 py-space-sm rounded-lg font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Search files, hashes, agent IDs, or forensic logs..." type="text"/><div class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-code-sm text-code-sm">⌘K</div></div></div><div class="flex items-center gap-space-lg"><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-secondary text-base">water_drop</span><span class="font-label-md text-label-md text-on-surface">1,420 Active Watermarks</span></div><div class="hidden md:flex items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm"><span class="material-symbols-outlined text-base text-outline">schedule</span><span>2024-03-29 18:42:01 UTC</span></div><div class="relative flex items-center justify-center p-space-sm rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></div><div class="flex items-center gap-space-sm pl-space-sm cursor-pointer"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XNi1z6-QcAdtasqKzE7y0XLeyKWod_w7sdMly2KhJyOAN5gFFOrObVnHLX76reNcm6EYBDLhK4jfPQv8o4_53kRz2i7lromkvgofSXwPELmQpfbJWSj-ntjBnmTZVJJjVNhzMz1bqULX1UQJ7q5eWiTSGm4Pee7s_EXdnrrnO8Et6qvq1-6BSlFFAiMlPfxrnY17AOzQrEBhhuK-tNeHYk81JiR3Yl2kZ1SQnd9kc"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface"></span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Security Ops</span><span class="font-code-sm text-code-sm text-outline">sec-admin-01</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full">
+<!-- Top Forensic Module Header -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Forensic Extraction Lab & Leak Attribution</span>
+<div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-secondary font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>Forensic Engine v4.2.1 • Ready for Ingestion</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+          Ingest suspicious or leaked materials, execute multi-layer steganographic decoding, and calculate cryptographic recipient attribution.
+        </p>
+</div>
+<!-- Quick Telemetry & Hash Badge -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-secondary text-base">verified</span>
+<span>PKCS#7 FIPS HSM Active</span>
+</div>
+<span class="text-outline-variant font-code-sm text-code-sm">•</span>
+<div class="flex items-center gap-space-xs text-on-surface font-code-sm text-code-sm">
+<span class="text-outline">Entropy Floor:</span>
+<span class="text-secondary font-semibold">0.9997 bit/px</span>
+</div>
+</div>
+</div>
+<!-- Step 1: Leaked Evidence Ingestion Zone -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Ingestion Dropzone -->
+<div class="lg:col-span-6 bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-16 -top-16 w-52 h-52 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-md z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-code-sm text-code-sm uppercase">Step 01</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Leaked Asset Intake</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">AUTO-SANITY SHA-256</span>
+</div>
+<div class="bg-surface-container-lowest hover:bg-surface-container transition-all cursor-pointer rounded-xl p-space-xl flex flex-col items-center justify-center text-center gap-space-sm group/drop">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center group-hover/drop:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl text-secondary">document_scanner</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">Drop intercepted file, screenshot, printed scan, or audio/text snippet</span>
+<span class="font-body-sm text-body-sm text-outline">Supports PNG, JPEG, PDF, TIFF, DOCX, RAW-PCM or Social Compression Strips (Max 500 MB)</span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<span class="px-space-sm py-1 rounded bg-surface-container-highest font-code-sm text-code-sm text-on-surface-variant">Click to browse filesystem</span>
+<span class="font-code-sm text-code-sm text-outline">or paste clipboard payload</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md z-10">
+<span class="font-body-sm text-body-sm text-outline">Stego Lattice Decoding: Robust against 40% crop & resample</span>
+<span class="font-code-sm text-code-sm text-secondary">Hash Match Engine: Synchronized</span>
+</div>
+</div>
+<!-- Active Analysis Target & Extractions Parameters -->
+<div class="lg:col-span-6 bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-code-sm text-code-sm uppercase">Active Specimen</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Target Metadata & Engine Tuning</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">LOADED IN RAM</span>
+</div>
+<!-- Specimen Overview Card -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-start gap-space-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-75" data-alt="Macro forensic digital screen crop of high sensitivity quarterly financial tabular document with visible anti-aliased subpixel rendering and moire grain pattern from a handheld smartphone camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu89Ue0IMly9PNzMUVRXh67LSyO41mN7M7pFO5QXDK2lrCEW6YGtSvLF-JqKrcYcpBl9NHppYth_92K8S2ueij6Ur70DJ8xQ6oPm6e_i655J1liTd-IheHpKdXmvhQFDrKhWId8QY0fMMJi_ZBihcrnhp0T94ILRKTct5FyJ2HBlZ9N5sITUe5kJLLuZHEEhC0q8rU956a9toLxj805QwE7dOsHzqzTLC-oEKlvdo"/>
+<span class="material-symbols-outlined absolute text-secondary text-lg">crop_free</span>
+</div>
+<div class="flex flex-col gap-1 w-full min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-code-md text-code-md text-on-surface font-semibold truncate">leaked_financial_excerpt_leak_channel.jpg</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-variant font-code-sm text-code-sm text-on-surface-variant">Social Crop</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs text-on-surface-variant font-code-sm text-code-sm mt-0.5">
+<div><span class="text-outline">Size:</span> 3.8 MB</div>
+<div><span class="text-outline">Res:</span> 2400×1600 px</div>
+<div><span class="text-outline">Ingested:</span> 14:22:01 UTC</div>
+</div>
+<div class="text-outline font-code-sm text-code-sm truncate mt-0.5">
+                SHA256: <span class="text-on-surface-variant">9a42fbb1c7a8809df4429f44618e47261a8ef1b714f3b2361b2b80a9c94f57c1</span>
+</div>
+</div>
+</div>
+<!-- Extraction Controls & Switches -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Deep Heuristic Scan</span>
+<span class="font-body-sm text-body-sm text-outline">Search all 16 frequency channels</span>
+</div>
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest accent-primary cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Noise & OCR Reconstruction</span>
+<span class="font-body-sm text-body-sm text-outline">Correct moire & lens distortion</span>
+</div>
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest accent-primary cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Run Forensic Extraction CTA -->
+<div class="pt-space-md flex items-center gap-space-md">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-3 px-space-lg rounded-lg flex items-center justify-center gap-space-sm shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-lg">radar</span>
+<span>Execute Multi-Spectral Extraction</span>
+</button>
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md py-3 px-space-md rounded-lg flex items-center gap-space-xs transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-lg">tune</span>
+<span>Filter Presets</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Step 2 & 3: Live Forensic Match & Attribution Panel -->
+<div class="flex flex-col gap-space-md">
+<!-- Investigation Confirmed Alert Banner -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex items-center gap-space-md pl-space-xs">
+<div class="w-10 h-10 rounded-lg bg-error-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-xl">gavel</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-error font-semibold tracking-wide">FORENSIC MATCH CONFIRMED</span>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-code-sm text-code-sm font-semibold">CONFIDENCE: 99.94%</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-code-sm text-code-sm">5-SIGMA THRESHOLD EXCEEDED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Invisible watermarking payload successfully inverted from DCT Bitplane 3. Zero hash collision probability across 4,200 issued copies.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-auto">
+<span class="font-code-sm text-code-sm text-outline">Audit Stamp:</span>
+<span class="font-code-sm text-code-sm text-on-surface bg-surface-container-high px-space-xs py-1 rounded">TRC-2025-8821X</span>
+</div>
+</div>
+<!-- Split Attribution & Bit-Level Inspector Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Side: Culprit Agent Identity Card (5 Columns) -->
+<div class="xl:col-span-5 bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between gap-space-lg relative">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-code-sm text-code-sm uppercase">Breach Attribution</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Recipient Identity Profile</span>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+</div>
+<!-- Culprit Avatar & Primary Stats -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-center gap-space-md">
+<div class="relative shrink-0">
+<img class="w-16 h-16 rounded-xl object-cover" data-alt="Corporate headshot portrait of male senior executive in dark modern business attire with subdued dramatic lighting against dark neutral backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG1A9l9OityMpeJVdTYaxcQSBF91hWHfAiRuANmuURVLXSnyZRS02AGR7wUFGEpUCtjKm13MylJR4M2HxKl0Vg9ra82Y7pmDW_fDo6BuQ0MU53RluStefIYGA5IlH7T9jkRiJNF2dSBs7ODuGiIWUC7gAgFWBJu9-yoDr-tG_zO9kv9FB3hXoTAC8etqrNjZca7T0HUzn0DWa0FlMxb_hwPPp-zsS-PkRCZUHhQIE"/>
+<span class="absolute -bottom-1 -right-1 px-1.5 py-0.5 rounded bg-error text-on-error font-code-sm text-[10px] font-bold">CULPRIT</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold truncate">Devon K. Vance</span>
+<span class="material-symbols-outlined text-error text-base">warning</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant truncate">Senior Financial Analyst, Corporate Strategy</span>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary font-code-sm text-code-sm font-semibold">AGT-8821</span>
+<span class="px-space-xs py-0.5 rounded bg-error-container/40 text-error font-code-sm text-code-sm">Clearance: Level 4 (Exec Only)</span>
+</div>
+</div>
+</div>
+<!-- Forensic Provenance Logs -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Cryptographic Provenance</span>
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-space-sm font-body-sm text-body-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="text-outline">Recovered Stego Token:</span>
+<span class="font-code-sm text-code-sm text-secondary bg-surface-container-lowest px-space-xs py-0.5 rounded select-all">0x7F2A-8821-B491-LT</span>
+</div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="text-outline">Original Dispatch Date:</span>
+<span class="text-on-surface font-code-sm text-code-sm">Oct 12, 2025 • 09:15:22 UTC</span>
+</div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="text-outline">IP Logged At Egress:</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">172.56.21.90 (Comcast Business)</span>
+</div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="text-outline">Client Device Fingerprint:</span>
+<span class="text-on-surface">MacBook Pro M3 • macOS Sonoma 14.6</span>
+</div>
+<div class="flex flex-col gap-1 pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="text-outline">Variant Match Index:</span>
+<span class="font-code-sm text-code-sm text-primary font-semibold">Master Variant #19 of 24</span>
+</div>
+<div class="text-outline font-code-sm text-[10px] break-all bg-surface-container-lowest p-space-xs rounded">
+                    SHA256: e4b29c991a27e80d4f33128bb98cd14502f928e19c3b88b0a1a5b821437ff90c
+                  </div>
+</div>
+</div>
+</div>
+<!-- Historical Leak Risk Radar Indicator -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-base">troubleshoot</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Incident Precedents</span>
+<span class="font-body-sm text-body-sm text-outline">0 prior infractions (Clean record)</span>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-code-sm text-code-sm font-semibold">IMMEDIATE RISK</span>
+</div>
+</div>
+<!-- Quick Agent Quarantine Action -->
+<div class="pt-space-xs">
+<button class="w-full bg-error-container hover:bg-on-error text-error hover:text-on-error-container font-label-md text-label-md py-2.5 px-space-md rounded-lg flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-base">block</span>
+<span>Lock Agent Access Tokens (Revoke Key AGT-8821)</span>
+</button>
+</div>
+</div>
+<!-- Right Side: Cryptographic Evidence & Bit-Level Extraction Inspector (7 Columns) -->
+<div class="xl:col-span-7 bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col gap-space-md">
+<!-- Header bar for bit inspection -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-code-sm text-code-sm uppercase">Bit-Level Telemetry</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Multi-Spectral Extraction Telemetry</span>
+</div>
+<div class="flex items-center gap-space-xs text-secondary font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-base">memory</span>
+<span>Discrete Cosine Transform (DCT)</span>
+</div>
+</div>
+<!-- Technical Extraction Metrics Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">Carrier Bitplane</span>
+<span class="font-code-md text-code-md text-on-surface font-semibold">Spatial Freq #3</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">Hamming Distance</span>
+<span class="font-code-md text-code-md text-secondary font-semibold">0.002% Error</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">Carrier Noise SNR</span>
+<span class="font-code-md text-code-md text-on-surface font-semibold">+42.8 dB</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-outline">Signature Valid</span>
+<span class="font-code-md text-code-md text-secondary font-semibold">RSA-4096 VALID</span>
+</div>
+</div>
+<!-- Decoded Stego JSON Dump Card -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Extracted Payload Core (Decrypted via HSM Master Key)</span>
+<button class="text-secondary hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+<span>Copy Payload</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl font-code-sm text-code-sm text-on-surface leading-relaxed overflow-x-auto">
+<pre class="font-code-sm text-code-sm"><span class="text-outline">{</span>
+  <span class="text-primary">"schema"</span>: <span class="text-secondary">"urn:leaktrace:forensic:payload:v4"</span>,
+  <span class="text-primary">"agent_id"</span>: <span class="text-error font-semibold">"AGT-8821"</span>,
+  <span class="text-primary">"carrier_file_hash"</span>: <span class="text-on-surface-variant">"sha256:d89e02bb4109fa7..."</span>,
+  <span class="text-primary">"variant_index"</span>: <span class="text-on-surface">19</span>,
+  <span class="text-primary">"recipient_entropy_nonce"</span>: <span class="text-secondary">"0x48F102AA90E1"</span>,
+  <span class="text-primary">"epoch_timestamp"</span>: <span class="text-on-surface">1728724500</span>, <span class="text-outline">// 2025-10-12T09:15:00Z</span>
+  <span class="text-primary">"pki_signature"</span>: <span class="text-secondary">"MIIEowIBAAKCAQEA34L...9X2A== [RSA-4096-VALID]"</span>,
+  <span class="text-primary">"stego_lattice_checksum"</span>: <span class="text-primary">"0x992B"</span>
+<span class="text-outline">}</span></pre>
+</div>
+</div>
+<!-- Visual Differential Matrix: Master vs Leaked vs Heatmap -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Visual Differential Matrix (Spectral Magnifier 1600%)</span>
+<span class="font-code-sm text-code-sm text-outline">Bilinear Reconstruction • Alignment Synchronized</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- Frame 1: Original Clean Master -->
+<div class="bg-surface-container p-space-sm rounded-xl flex flex-col gap-space-xs">
+<div class="h-36 rounded-lg bg-surface-container-lowest relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Microscopic clean digital typography fragment of confidential earnings report financial numbers with pin-sharp high contrast black and white vector lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvbh65AnuBZeGI-uOqaqYWZAYIwXgSLKyQqkHZcb3xjbRpQYvEIlrQYAsqC6BSufDN9E04XlXqRbLxYtADckH4WSdQXv8QrQQe1osldSgrOn8HHqI3u5mw1sHJpu0Xmg6utslRmuYsFmhUjt0oewGZQeXAtjC_ZT1PBuohR4riIYjywYWhTjryi6niWGmpOuW6HNHtaSZjS-_B4Xlajp6QA95HcMjb6iJc8zfbBEc"/>
+<div class="absolute bottom-1.5 left-1.5 px-space-xs py-0.5 rounded bg-surface/80 backdrop-blur font-code-sm text-[10px] text-on-surface">
+                      Original Master #19
+                    </div>
+</div>
+<div class="flex items-center justify-between font-code-sm text-code-sm text-outline">
+<span>Reference Matrix</span>
+<span class="text-on-surface">0.00% Δ</span>
+</div>
+</div>
+<!-- Frame 2: Leaked Variant (with crop/compression) -->
+<div class="bg-surface-container p-space-sm rounded-xl flex flex-col gap-space-xs">
+<div class="h-36 rounded-lg bg-surface-container-lowest relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Microscopic digital screen capture fragment degraded with JPEG compression noise chromatic aberration and slight rotated crop artifact" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCChB9BYyTL0mkzC2GobgQmCx8IfW_Zd8FTgFD_g2oS61P8v1dd956ZmT6Aa9YnI817GY4VFk_cIF8A3Pia323xlFh4Ag4qpeNe7yP6V1XXh00m65OOMF3IYT4ZzK_rgGg2RJPcKH80759Lxo5X5gy8Y_wxSl5Sv0MEGgYJl5spsl2HJ7tlUWrIbWECJtufT_pmxxhK3aE5vQpspjo1KxDy2D3p7Nj-4y0lpXiNeHY"/>
+<div class="absolute bottom-1.5 left-1.5 px-space-xs py-0.5 rounded bg-surface/80 backdrop-blur font-code-sm text-[10px] text-error font-medium">
+                      Intercepted Leak
+                    </div>
+</div>
+<div class="flex items-center justify-between font-code-sm text-code-sm text-outline">
+<span>Signal Degradation</span>
+<span class="text-error font-semibold">-18.4 dB</span>
+</div>
+</div>
+<!-- Frame 3: Extracted Watermark Heatmap -->
+<div class="bg-surface-container p-space-sm rounded-xl flex flex-col gap-space-xs">
+<div class="h-36 rounded-lg bg-surface-container-lowest relative overflow-hidden flex items-center justify-center">
+<!-- SVG Heatmap Visualization -->
+<svg class="w-full h-full text-secondary" fill="none" viewbox="0 0 200 120">
+<rect fill="#070e1c" height="120" width="200"></rect>
+<defs>
+<pattern height="16" id="stego-grid" patternunits="userSpaceOnUse" width="16">
+<rect fill="currentColor" fill-opacity="0.15" height="1" width="1"></rect>
+</pattern>
+</defs>
+<rect fill="url(#stego-grid)" height="120" width="200"></rect>
+<!-- Recovered Bitmarkers Heatmap -->
+<circle cx="34" cy="28" fill="#5de6ff" fill-opacity="0.8" r="6"></circle>
+<circle cx="68" cy="42" fill="#5de6ff" fill-opacity="0.6" r="4"></circle>
+<circle cx="112" cy="30" fill="#5de6ff" fill-opacity="0.9" r="7"></circle>
+<circle cx="150" cy="56" fill="#5de6ff" fill-opacity="0.75" r="5"></circle>
+<circle cx="86" cy="88" fill="#5de6ff" fill-opacity="0.95" r="8"></circle>
+<circle cx="138" cy="94" fill="#5de6ff" fill-opacity="0.7" r="5"></circle>
+<circle cx="178" cy="38" fill="#5de6ff" fill-opacity="0.5" r="4"></circle>
+<!-- Watermark lattice lines -->
+<path d="M34 28 L68 42 L112 30 L150 56 L138 94 L86 88 Z" stroke="#5de6ff" stroke-dasharray="2 2" stroke-opacity="0.7" stroke-width="1"></path>
+<text fill="#5de6ff" font-family="monospace" font-size="9" x="12" y="112">Recovered DCT Bitmarkers (Lattice ID: 8821)</text>
+</svg>
+<div class="absolute bottom-1.5 left-1.5 px-space-xs py-0.5 rounded bg-surface/80 backdrop-blur font-code-sm text-[10px] text-secondary font-medium">
+                      Stego Heatmap
+                    </div>
+</div>
+<div class="flex items-center justify-between font-code-sm text-code-sm text-outline">
+<span>Decoded Markers</span>
+<span class="text-secondary font-semibold">128/128 Bits</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Telemetry Indicator -->
+<div class="flex items-center justify-between text-outline font-code-sm text-code-sm pt-space-xs">
+<span>Cryptographic Confidence Interval: σ = 5.21 (p < 10⁻⁸)</span>
+<span class="text-on-surface-variant">Validated against Master Registry v9.4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Forensic Chain of Custody & Audit Timeline -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-code-sm text-code-sm uppercase">Chain of Custody</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Chronological Leak & Ingestion Timeline</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">UTC Synchronized Master Clock</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative">
+<!-- Event 1 -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-space-xs relative">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-secondary">STAGE 01</span>
+<span class="font-code-sm text-code-sm text-outline">12-OCT 09:15 UTC</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">File Generated & Watermarked</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Document dispatched to Devon Vance (AGT-8821). Stego token 0x7F2A embedded in DCT bitplanes.
+          </p>
+</div>
+<!-- Event 2 -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-space-xs relative">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-secondary">STAGE 02</span>
+<span class="font-code-sm text-code-sm text-outline">12-OCT 13:40 UTC</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">External Leak Intercepted</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Document surfaced on unindexed dark web monitoring forum via messaging screenshot crop.
+          </p>
+</div>
+<!-- Event 3 -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-space-xs relative">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-primary">STAGE 03</span>
+<span class="font-code-sm text-code-sm text-outline">12-OCT 14:22 UTC</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Forensic Lab Ingestion</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            File loaded into RAM sandbox. Heuristic filters executed with 16-channel DCT spatial decomposition.
+          </p>
+</div>
+<!-- Event 4 (Match) -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col gap-space-xs relative">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-error font-semibold">STAGE 04</span>
+<span class="font-code-sm text-code-sm text-error font-semibold">12-OCT 14:22:04 UTC</span>
+</div>
+<span class="font-label-md text-label-md text-error font-semibold">Attribution Locked</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            99.94% certainty match resolved to Devon K. Vance. Cryptographic hash PKCS#7 envelope created.
+          </p>
+</div>
+</div>
+</div>
+<!-- Step 4: Action Dossier Bar & Response Matrix -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl text-secondary">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Forensic Dossier & Remediation Options</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Export cryptographically signed legal dossier or trigger automated containment policies.</span>
+</div>
+</div>
+<!-- Action Buttons Matrix -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Secondary Option: Re-run Alternative Engine -->
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-2.5 px-space-md rounded-lg flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-base text-outline">sync</span>
+<span>Re-run with Fourier/LSB</span>
+</button>
+<!-- Secondary Option: Legal Hold -->
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-2.5 px-space-md rounded-lg flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-base text-primary">policy</span>
+<span>Initiate Legal Hold Lock</span>
+</button>
+<!-- Primary Forensic Action: Download Dossier -->
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-2.5 px-space-md rounded-lg flex items-center gap-space-xs shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Download Court Dossier (PKCS#7)</span>
+</button>
+<!-- Destructive Containment Action: Suspend Agent -->
+<button class="bg-error-container hover:bg-on-error text-error hover:text-on-error-container font-label-md text-label-md py-2.5 px-space-md rounded-lg flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-base">gavel</span>
+<span>Suspend Agent Access</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

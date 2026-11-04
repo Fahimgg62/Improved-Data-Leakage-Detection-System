@@ -1,0 +1,29 @@
+{
+  "name": "improved-data-leakage-detection-system",
+  "version": "1.0.0",
+  "description": "LeakTrace Forensic Watermarking and Data Leakage Detection System",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "node tests/testCases.test.js"
+  },
+  "keywords": [
+    "data-leakage",
+    "steganography",
+    "forensics",
+    "watermarking",
+    "security"
+  ],
+  "author": "Fahim Bin Zaman, Abid Ajmal Tahmid, Hojaifa",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.1"
+  }
+}
+

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"outline-variant":"#444655","on-secondary":"#00363e","tertiary":"#ffb68f","on-surface":"#dce2f6","background":"#0c1321","on-secondary-container":"#00515d","secondary-container":"#00cbe6","on-error":"#690005","on-surface-variant":"#c5c5d8","surface-variant":"#2e3544","primary":"#bac3ff","surface-container-high":"#232a39","surface":"#0c1321","tertiary-container":"#e66f1e","surface-dim":"#0c1321","tertiary-fixed-dim":"#ffb68f","surface-container-lowest":"#070e1c","secondary-fixed-dim":"#2fd9f4","primary-fixed-dim":"#bac3ff","inverse-surface":"#dce2f6","on-error-container":"#ffdad6","on-tertiary-container":"#491c00","on-primary-container":"#001a7f","on-primary":"#001f90","outline":"#8e8fa1","on-background":"#dce2f6","secondary-fixed":"#a2eeff","inverse-on-surface":"#2a3040","on-secondary-fixed-variant":"#004e5a","secondary":"#5de6ff","tertiary-fixed":"#ffdbca","on-secondary-fixed":"#001f25","surface-bright":"#323949","error":"#ffb4ab","surface-container-highest":"#2e3544","surface-container":"#19202e","on-tertiary-fixed-variant":"#773200","on-tertiary-fixed":"#331200","surface-tint":"#bac3ff","primary-container":"#7287ff","on-primary-fixed-variant":"#002fc9","primary-fixed":"#dee0ff","inverse-primary":"#2d4ce2","error-container":"#93000a","surface-container-low":"#151b2a","on-tertiary":"#542100","on-primary-fixed":"#00105b"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","gutter":"1rem","space-xl":"2rem","space-lg":"1.5rem","margin":"1rem","space-sm":"0.5rem","space-md":"1rem","margin-desktop":"2rem","gutter-desktop":"1.5rem"},"fontFamily":{"headline-lg-mobile":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"headline-sm":["Inter"],"headline-xl-mobile":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"code-md":["monospace"],"code-sm":["monospace"],"body-sm":["Inter"],"headline-xl":["Inter"]},"fontSize":{"headline-lg-mobile":["22px",{"lineHeight":"30px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"code-md":["13px",{"lineHeight":"20px","fontWeight":"400"}],"code-sm":["11px",{"lineHeight":"16px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-50 shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="w-full h-full px-gutter-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-[260px]"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shadow-[0_0_12px_rgba(93,230,255,0.2)]"><span class="material-symbols-outlined text-[20px]">fingerprint</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">LeakTrace</span></div><div class="flex items-center gap-space-xs px-2 py-0.5 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-code-sm text-code-sm text-secondary uppercase tracking-wider">Enclave: Active</span></div></div><div class="flex-1 max-w-xl hidden md:flex items-center"><div class="w-full flex items-center bg-surface-container px-space-md py-1.5 rounded-lg"><span class="material-symbols-outlined text-outline text-[18px] mr-space-sm">search</span><input class="w-full bg-transparent border-0 outline-none text-on-surface placeholder:text-outline font-body-sm text-body-sm" placeholder="Search telemetry hashes, agent UUIDs, audit events..." type="text"/><span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">⌘K</span></div></div><div class="flex items-center gap-space-lg"><div class="hidden xl:flex items-center gap-space-md bg-surface-container-low px-space-md py-1 rounded-lg"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[16px]">water_drop</span><span class="font-code-sm text-code-sm text-on-surface font-semibold">1,420 Active Watermarks</span></div><div class="w-px h-3 bg-surface-container-highest"></div><div class="flex items-center gap-space-xs font-code-sm text-code-sm text-on-surface-variant"><span class="material-symbols-outlined text-outline text-[14px]">schedule</span><span>14:02:18 UTC</span></div></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Sec Admin</div><div class="font-code-sm text-code-sm text-outline leading-tight">sec-admin@organization.com</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-lowest z-40 flex flex-col justify-between py-space-lg px-space-md shadow-[1px_0_12px_rgba(0,0,0,0.18)]"><div class="flex flex-col gap-space-lg"><div class="px-space-xs"><a class="w-full flex items-center justify-center gap-space-sm py-2.5 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md font-semibold transition-all shadow-[0_0_16px_-2px_rgba(114,135,255,0.35)]" data-path="upload-file" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Upload New File</span></a></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="upload-file" href="#"><span class="material-symbols-outlined text-[20px]">upload_file</span><span>Upload File</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-files" href="#"><span class="material-symbols-outlined text-[20px]">folder</span><span>My Files</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="agents" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Agents</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Audit Logs</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="leak-analysis" href="#"><span class="material-symbols-outlined text-[20px]">troubleshoot</span><span>Leak Analysis</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low"><div class="flex items-center justify-between"><span class="font-code-sm text-code-sm text-outline uppercase">Status Telemetry</span><span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary">Privilege L3</span></div><div class="flex items-center gap-space-sm mt-1"><span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#5de6ff]"></span><span class="font-body-sm text-body-sm text-on-surface">Encrypted Engine: ONLINE</span></div><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#5de6ff]"></span><span class="font-body-sm text-body-sm text-on-surface">Steganographic Lattice: ACTIVE</span></div><div class="pt-space-xs mt- space-xs"><div class="flex justify-between font-code-sm text-code-sm text-outline mb-1"><span>Vault Storage</span><span>78%</span></div><div class="w-full h-1 rounded-full bg-surface-container-highest overflow-hidden"><div class="w-[78%] h-full bg-primary-container rounded-full"></div></div></div></div></aside><div class="pl-72"><main class="w-full pt-16 px-gutter-desktop min-h-screen bg-surface"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg pb-16">
+<!-- Top Breadcrumb & Telemetry Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-2">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-outline tracking-wider uppercase">
+<span class="text-secondary font-semibold">Vault Administration</span>
+<span class="text-surface-container-highest">/</span>
+<span>Agent Node Directory</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_#5de6ff]"></span>
+<span class="text-secondary font-mono text-[10px]">ZK-PROVEN</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          Authorized Agents &amp; Enclaves
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+          Zero-knowledge steganographic identity directory. Active agents receive cryptographically watermarked artifacts bound to physical hardware telemetry.
+        </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all shadow-sm" id="toggleEmptyStateBtn">
+<span class="material-symbols-outlined text-[18px]">rule_folder</span>
+<span>Empty View Toggle</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+<span>Export Roster (.csv)</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md font-semibold transition-all shadow-[0_0_20px_-3px_rgba(114,135,255,0.45)]" id="openAddModalBtn">
+<span class="material-symbols-outlined text-[18px]">add_moderator</span>
+<span>+ Add Agent</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Status Badges Rail -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Total Agents</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">48</span>
+<span class="font-code-sm text-code-sm text-secondary">Directory Sync</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">wifi_tethering</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Active Enclaves</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-secondary font-bold">44</span>
+<span class="font-code-sm text-code-sm text-outline">91.6% nominal</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">HW Attested</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">41</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary">FIDO2 / T2</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">gpp_maybe</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Suspended / Flagged</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-error font-bold">4</span>
+<span class="font-code-sm text-code-sm text-error">Pending audit</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Table Container (Standard View) -->
+<div class="flex flex-col rounded-xl bg-surface-container-low shadow-md overflow-hidden" id="tableViewCard">
+<!-- Filters and Search Toolbar -->
+<div class="p-space-md bg-surface-container-low flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="flex-1 max-w-xl flex items-center bg-surface-container-lowest px-space-md py-2 rounded-lg shadow-inner">
+<span class="material-symbols-outlined text-outline text-[18px] mr-space-sm">fingerprint</span>
+<input class="w-full bg-transparent border-0 outline-none text-on-surface placeholder:text-outline font-body-sm text-body-sm" id="agentSearchInput" placeholder="Search by agent name, email, node UUID, or hardware fingerprint..." type="text"/>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant ml-2">Esc</span>
+</div>
+<!-- Filter Selectors -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md">
+<span class="text-outline text-label-sm font-label-sm uppercase">Dept:</span>
+<select class="bg-transparent text-on-surface outline-none cursor-pointer text-body-sm font-body-sm pr-1">
+<option class="bg-surface-container-low text-on-surface" value="all">All Departments</option>
+<option class="bg-surface-container-low text-on-surface" value="executive">Executive</option>
+<option class="bg-surface-container-low text-on-surface" value="legal">Legal Counsel</option>
+<option class="bg-surface-container-low text-on-surface" value="finance">Finance &amp; M&amp;A</option>
+<option class="bg-surface-container-low text-on-surface" value="secops">Security Ops</option>
+<option class="bg-surface-container-low text-on-surface" value="engineering">Engineering</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md">
+<span class="text-outline text-label-sm font-label-sm uppercase">Role:</span>
+<select class="bg-transparent text-on-surface outline-none cursor-pointer text-body-sm font-body-sm pr-1">
+<option class="bg-surface-container-low text-on-surface" value="all">All Roles</option>
+<option class="bg-surface-container-low text-on-surface" value="admin">Admin</option>
+<option class="bg-surface-container-low text-on-surface" value="analyst">Forensic Analyst</option>
+<option class="bg-surface-container-low text-on-surface" value="recipient">Recipient Agent</option>
+<option class="bg-surface-container-low text-on-surface" value="auditor">External Auditor</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-3 py-1.5 rounded-lg text-on-surface-variant font-label-md text-label-md">
+<span class="text-outline text-label-sm font-label-sm uppercase">Status:</span>
+<select class="bg-transparent text-on-surface outline-none cursor-pointer text-body-sm font-body-sm pr-1">
+<option class="bg-surface-container-low text-on-surface" value="all">All Statuses</option>
+<option class="bg-surface-container-low text-on-surface" value="active">Active Nodes</option>
+<option class="bg-surface-container-low text-on-surface" value="inactive">Inactive / Flagged</option>
+</select>
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Clear Filters">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Bulk Action Sticky Bar (Visible when items selected) -->
+<div class="px-space-md py-2.5 bg-surface-container-high flex flex-wrap items-center justify-between gap-space-md transition-all" id="bulkActionBar">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-2">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" id="bulkMasterCheckbox" type="checkbox"/>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">3 of 48 agents selected</span>
+</div>
+<span class="text-outline-variant font-mono text-xs">|</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline uppercase tracking-wide">Select All 48 Agents Across Directory</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">lock_reset</span>
+<span>Force PW Reset</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container-highest hover:bg-surface-variant text-secondary font-label-sm text-label-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">token</span>
+<span>Re-attest Hardware</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded bg-error-container hover:bg-error text-on-error-container hover:text-on-error font-label-sm text-label-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span>Bulk Deactivate (3)</span>
+</button>
+</div>
+</div>
+<!-- High-Density Forensic Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4 w-10" scope="col">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3 px-4 font-semibold text-on-surface" scope="col">Agent Identity &amp; Node UUID</th>
+<th class="py-3 px-4 font-semibold text-on-surface" scope="col">Corporate Email</th>
+<th class="py-3 px-4 font-semibold text-on-surface" scope="col">Department</th>
+<th class="py-3 px-4 font-semibold text-on-surface" scope="col">Assigned Role</th>
+<th class="py-3 px-4 font-semibold text-on-surface" scope="col">Enclave Status</th>
+<th class="py-3 px-4 font-semibold text-on-surface" scope="col">Last Attested &amp; HW Token</th>
+<th class="py-3 px-4 font-semibold text-on-surface text-right pr-6" scope="col">Operations</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/40">
+<!-- Row 1: Devon Vance (Selected) -->
+<tr class="bg-surface-container/30 hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3.5 px-4">
+<input checked="" class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-md text-label-md font-bold text-secondary">
+                      DV
+                    </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Devon K. Vance</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono tracking-tight">AGT-8821 • encl-v2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-code-sm text-code-sm text-on-surface-variant font-mono">
+                devon.vance@leaktrace-sec.corp
+              </td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                  Executive
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-primary font-medium">VP Corporate Strategy</span>
+</td>
+<td class="py-3.5 px-4">
+<button class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">Active</span>
+</button>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface font-mono">12m ago • 14:36 UTC</span>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[13px]">shield_with_heart</span>
+<span>Apple T2 Secure Enclave</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right pr-6">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Edit Profile">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-error" title="Suspend Agent">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Audit Telemetry">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Elena Rostova (Selected) -->
+<tr class="bg-surface-container/30 hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3.5 px-4">
+<input checked="" class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-md text-label-md font-bold text-primary">
+                      ER
+                    </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Elena Rostova</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono tracking-tight">AGT-042 • encl-v2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-code-sm text-code-sm text-on-surface-variant font-mono">
+                elena.rostova@leaktrace-sec.corp
+              </td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                  Legal
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-primary font-medium">Chief Legal Counsel</span>
+</td>
+<td class="py-3.5 px-4">
+<button class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">Active</span>
+</button>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface font-mono">2h ago • 12:44 UTC</span>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[13px]">key</span>
+<span>YubiKey 5 NFC (FIDO2)</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right pr-6">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Edit Profile">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-error" title="Suspend Agent">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Audit Telemetry">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: David Chen (Selected) -->
+<tr class="bg-surface-container/30 hover:bg-surface-container-high/60 transition-colors">
+<td class="py-3.5 px-4">
+<input checked="" class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-md text-label-md font-bold text-on-surface">
+                      DC
+                    </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">David Chen</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono tracking-tight">AGT-043 • encl-v2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-code-sm text-code-sm text-on-surface-variant font-mono">
+                david.chen@leaktrace-sec.corp
+              </td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                  Finance
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-primary font-medium">Sr. Director M&amp;A</span>
+</td>
+<td class="py-3.5 px-4">
+<button class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">Active</span>
+</button>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface font-mono">4h ago • 10:18 UTC</span>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[13px]">memory</span>
+<span>TPM 2.0 Attested</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right pr-6">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Edit Profile">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-error" title="Suspend Agent">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Audit Telemetry">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Sarah Al-Mansoor -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-3.5 px-4">
+<input class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-md text-label-md font-bold text-on-surface">
+                      SM
+                    </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Sarah Al-Mansoor</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono tracking-tight">AGT-044 • encl-v2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-code-sm text-code-sm text-on-surface-variant font-mono">
+                sarah.mansoor@leaktrace-sec.corp
+              </td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                  Investor Relations
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-primary font-medium">Head of IR</span>
+</td>
+<td class="py-3.5 px-4">
+<button class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">Active</span>
+</button>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface font-mono">Yesterday • 19:12 UTC</span>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[13px]">shield_with_heart</span>
+<span>Apple T2 Secure Enclave</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right pr-6">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Edit Profile">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-error" title="Suspend Agent">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Audit Telemetry">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Marcus Reyes (Inactive / Flagged) -->
+<tr class="bg-error-container/10 hover:bg-error-container/20 transition-colors">
+<td class="py-3.5 px-4">
+<input class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-md text-label-md font-bold text-error">
+                      MR
+                    </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-error"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Marcus Reyes</span>
+<span class="font-code-sm text-code-sm text-error font-mono tracking-tight">AGT-4011 • revocation-alert</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-code-sm text-code-sm text-on-surface-variant font-mono">
+                marcus.reyes@leaktrace-sec.corp
+              </td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                  Engineering
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-on-surface font-medium">Lead Cryptanalyst</span>
+</td>
+<td class="py-3.5 px-4">
+<button class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-code-sm text-code-sm text-error font-semibold">Inactive (Locked)</span>
+</button>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-outline font-mono">14 days ago • Expired</span>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-error mt-0.5">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+<span>Attestation Desynced</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right pr-6">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Edit Profile">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded bg-error-container text-on-error-container hover:bg-error hover:text-on-error" title="Reactivate Node">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Audit Telemetry">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Jonathan Thorne -->
+<tr class="hover:bg-surface-container-high/40 transition-colors">
+<td class="py-3.5 px-4">
+<input class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary-container accent-primary-container cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-md text-label-md font-bold text-secondary">
+                      JT
+                    </div>
+<span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Jonathan Thorne</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono tracking-tight">AGT-9240 • encl-v2</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-code-sm text-code-sm text-on-surface-variant font-mono">
+                jonathan.thorne@leaktrace-sec.corp
+              </td>
+<td class="py-3.5 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                  Security Ops
+                </span>
+</td>
+<td class="py-3.5 px-4">
+<span class="font-label-md text-label-md text-primary font-medium">SecOps Lead</span>
+</td>
+<td class="py-3.5 px-4">
+<button class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#5de6ff]"></span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">Active</span>
+</button>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface font-mono">1d ago • 08:31 UTC</span>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-secondary mt-0.5">
+<span class="material-symbols-outlined text-[13px]">key</span>
+<span>YubiKey 5 FIPS</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right pr-6">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Edit Profile">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-error" title="Suspend Agent">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface" title="Audit Telemetry">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="p-space-md bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-outline">
+<span>Showing</span>
+<span class="text-on-surface font-semibold">1 - 6</span>
+<span>of</span>
+<span class="text-on-surface font-semibold">48</span>
+<span>registered agent nodes</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="p-1.5 rounded bg-surface-container-low hover:bg-surface-container-highest text-outline hover:text-on-surface transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary-container text-on-primary-container font-code-sm text-code-sm font-bold">1</button>
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm">2</button>
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm">3</button>
+<span class="px-1 text-outline font-mono text-sm">...</span>
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm">8</button>
+<button class="p-1.5 rounded bg-surface-container-low hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State Representation Card (Toggleable View) -->
+<div class="hidden flex-col items-center justify-center p-16 rounded-xl bg-surface-container-low shadow-md text-center" id="emptyStateCard">
+<div class="relative w-24 h-24 mb-space-lg flex items-center justify-center">
+<!-- Abstract Cyber Radar Grid -->
+<svg class="w-full h-full text-surface-container-highest animate-spin" style="animation-duration: 20s;" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="46" stroke="currentColor" stroke-dasharray="4 6" stroke-width="1.5"></circle>
+<circle cx="50" cy="50" fill="none" r="30" stroke="currentColor" stroke-width="1"></circle>
+<line stroke="currentColor" stroke-width="0.8" x1="50" x2="50" y1="4" y2="96"></line>
+<line stroke="currentColor" stroke-width="0.8" x1="4" x2="96" y1="50" y2="50"></line>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center text-error shadow-[0_0_24px_rgba(255,180,171,0.2)]">
+<span class="material-symbols-outlined text-[32px]">person_off</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-code-sm text-code-sm mb-3">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>ZERO MATCHING NODES</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight mb-2">
+        No Agent Nodes Registered
+      </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-xl">
+        No authorized recipients or investigators match the current filter criteria or have been enrolled into this steganographic enclave cluster.
+      </p>
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" id="resetFiltersEmptyBtn">
+<span class="material-symbols-outlined text-[18px]">filter_alt_off</span>
+<span>Reset Filter Bounds</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md font-semibold transition-all shadow-[0_0_16px_rgba(114,135,255,0.35)]" id="openAddModalFromEmptyBtn">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Add First Agent</span>
+</button>
+</div>
+</div>
+<!-- Real-time Steganographic Enclave Activity Monitor Inset -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md mt-2">
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Watermark Payload Distribution</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono">LTC-SHA256</span>
+</div>
+<div class="h-16 flex items-end gap-1.5 pt-2">
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-all h-[40%]" title="AGT-042 (Legal)"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-all h-[85%]" title="AGT-8821 (Executive)"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-all h-[60%]" title="AGT-043 (Finance)"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-all h-[25%]" title="AGT-044 (IR)"></div>
+<div class="flex-1 bg-error-container hover:bg-error rounded-t transition-all h-[95%]" title="AGT-4011 (Revoked)"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-all h-[70%]" title="AGT-9240 (SecOps)"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-all h-[50%]" title="AGT-3301 (Auditor)"></div>
+<div class="flex-1 bg-surface-container-high hover:bg-primary rounded-t transition-all h-[30%]" title="AGT-1102 (SecOps)"></div>
+</div>
+<div class="flex justify-between font-code-sm text-code-sm text-outline">
+<span>Cluster Alpha (32)</span>
+<span>Cluster Omega (16)</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">FIDO2 Hardware Quorum</span>
+<span class="font-code-sm text-code-sm text-secondary font-mono">STATUS: 98.2%</span>
+</div>
+<div class="flex items-center gap-space-md my-2">
+<div class="relative w-12 h-12 flex-shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface">41</div>
+</div>
+<div class="flex flex-col font-body-sm text-body-sm">
+<span class="text-on-surface font-semibold">Physical token bound</span>
+<span class="text-on-surface-variant font-code-sm text-code-sm">7 pending renewal or initial token handshake</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[88%]"></div>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Enclave Ingestion Security</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary">mTLS 1.3</span>
+</div>
+<div class="flex items-center gap-space-sm font-code-sm text-code-sm text-on-surface-variant my-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">encrypted</span>
+<span>Zero-leakage channel active across 6 corporate edge egress nodes.</span>
+</div>
+<div class="flex items-center justify-between text-code-sm font-code-sm text-outline">
+<span>Tamper Latency: &lt;1.8ms</span>
+<span class="text-secondary">Enclave Bound</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Presentation: Add Agent Registration -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-md hidden transition-opacity" id="addAgentModal">
+<div class="relative w-full max-w-xl rounded-xl bg-surface-container-low shadow-2xl overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container flex items-start justify-between">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+              Register New Authorized Agent
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Enroll an internal employee into the zero-knowledge steganographic distribution directory.
+            </p>
+</div>
+</div>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" id="closeAddModalBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body Form -->
+<div class="p-space-lg flex flex-col gap-space-md overflow-y-auto max-h-[716px]">
+<!-- Field 1: Full Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">
+            Full Name <span class="text-error">*</span>
+</label>
+<div class="flex items-center bg-surface-container-lowest px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">person</span>
+<input class="w-full bg-transparent border-0 outline-none text-on-surface font-body-sm text-body-sm placeholder:text-outline" placeholder="e.g. Cassian Andor" type="text" value="Cassian Andor"/>
+</div>
+</div>
+<!-- Field 2: Corporate Email -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">
+            Corporate Work Email <span class="text-error">*</span>
+</label>
+<div class="flex items-center bg-surface-container-lowest px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">alternate_email</span>
+<input class="w-full bg-transparent border-0 outline-none text-on-surface font-code-sm text-code-sm placeholder:text-outline" placeholder="c.andor@leaktrace-sec.corp" type="email" value="c.andor@leaktrace-sec.corp"/>
+</div>
+</div>
+<!-- Field 3: Department Select -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">
+            Department Allocation
+          </label>
+<div class="flex items-center bg-surface-container-lowest px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">domain</span>
+<select class="w-full bg-transparent border-0 outline-none text-on-surface font-body-sm text-body-sm cursor-pointer">
+<option class="bg-surface-container-low text-on-surface" selected="">Security Operations / Forensic Lab</option>
+<option class="bg-surface-container-low text-on-surface">Executive Committee</option>
+<option class="bg-surface-container-low text-on-surface">Legal &amp; Regulatory Compliance</option>
+<option class="bg-surface-container-low text-on-surface">Finance &amp; Corporate Development</option>
+<option class="bg-surface-container-low text-on-surface">Core Infrastructure Engineering</option>
+</select>
+</div>
+</div>
+<!-- Field 4: Role Radio Cards -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">
+            Assigned Enclave Role
+          </label>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex flex-col p-3 rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Admin</span>
+<input class="accent-primary-container" name="agentRole" type="radio" value="admin"/>
+</div>
+<span class="font-body-sm text-[11px] text-outline leading-tight">Master directory control and revocation rights.</span>
+</label>
+<label class="flex flex-col p-3 rounded-lg bg-surface-container-high cursor-pointer shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-secondary">Analyst</span>
+<input checked="" class="accent-primary-container" name="agentRole" type="radio" value="analyst"/>
+</div>
+<span class="font-body-sm text-[11px] text-outline leading-tight">Can extract payload telemetry &amp; trace leaks.</span>
+</label>
+<label class="flex flex-col p-3 rounded-lg bg-surface-container cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Recipient</span>
+<input class="accent-primary-container" name="agentRole" type="radio" value="recipient"/>
+</div>
+<span class="font-body-sm text-[11px] text-outline leading-tight">Receives unique steganographically injected vaults.</span>
+</label>
+</div>
+</div>
+<!-- Field 5: Ephemeral Key Generation -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold">
+              Temporary Access Token (One-Time)
+            </label>
+<button class="font-code-sm text-code-sm text-secondary hover:underline flex items-center gap-1" id="genKeyBtn">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>Generate Random</span>
+</button>
+</div>
+<div class="flex items-center bg-surface-container-lowest px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px] mr-2">key</span>
+<input class="w-full bg-transparent border-0 outline-none text-secondary font-code-sm text-code-sm font-mono" id="keyField" readonly="" type="text" value="LT-x9F2-k91Q-Z008-encl-sec"/>
+<button class="p-1 rounded text-outline hover:text-on-surface transition-colors" id="copyKeyBtn" title="Copy Key">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Field 6: Hardware Attestation Switch -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Enforce FIDO2 / TPM 2.0 Binding</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lock all decrypt tokens to cryptographic physical hardware on 1st login.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-container after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container flex items-center justify-end gap-space-sm">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors" id="cancelModalBtn">
+          Cancel
+        </button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-label-md text-label-md font-semibold transition-all shadow-[0_0_16px_rgba(114,135,255,0.4)]" id="submitAddAgentBtn">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Add Agent &amp; Generate Enclave Key</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Inline Script for UI Interactivity -->
+<script>
+    (function initAgentDirectory() {
+      const openAddModalBtn = document.getElementById('openAddModalBtn');
+      const openAddModalFromEmptyBtn = document.getElementById('openAddModalFromEmptyBtn');
+      const closeAddModalBtn = document.getElementById('closeAddModalBtn');
+      const cancelModalBtn = document.getElementById('cancelModalBtn');
+      const submitAddAgentBtn = document.getElementById('submitAddAgentBtn');
+      const addAgentModal = document.getElementById('addAgentModal');
+      
+      const toggleEmptyStateBtn = document.getElementById('toggleEmptyStateBtn');
+      const resetFiltersEmptyBtn = document.getElementById('resetFiltersEmptyBtn');
+      const tableViewCard = document.getElementById('tableViewCard');
+      const emptyStateCard = document.getElementById('emptyStateCard');
+      
+      const bulkMasterCheckbox = document.getElementById('bulkMasterCheckbox');
+      const rowCheckboxes = document.querySelectorAll('.row-checkbox');
+      const bulkActionBar = document.getElementById('bulkActionBar');
+
+      const genKeyBtn = document.getElementById('genKeyBtn');
+      const keyField = document.getElementById('keyField');
+      const copyKeyBtn = document.getElementById('copyKeyBtn');
+
+      // Modal open/close handlers
+      function openModal() {
+        addAgentModal.classList.remove('hidden');
+      }
+      function closeModal() {
+        addAgentModal.classList.add('hidden');
+      }
+
+      if (openAddModalBtn) openAddModalBtn.addEventListener('click', openModal);
+      if (openAddModalFromEmptyBtn) openAddModalFromEmptyBtn.addEventListener('click', openModal);
+      if (closeAddModalBtn) closeAddModalBtn.addEventListener('click', closeModal);
+      if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
+      if (submitAddAgentBtn) submitAddAgentBtn.addEventListener('click', () => {
+        closeModal();
+      });
+
+      // Toggle between Table View & Empty State View
+      let isEmptyView = false;
+      function toggleEmpty() {
+        isEmptyView = !isEmptyView;
+        if (isEmptyView) {
+          tableViewCard.classList.add('hidden');
+          emptyStateCard.classList.remove('hidden');
+          emptyStateCard.classList.add('flex');
+          toggleEmptyStateBtn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        } else {
+          tableViewCard.classList.remove('hidden');
+          emptyStateCard.classList.add('hidden');
+          emptyStateCard.classList.remove('flex');
+          toggleEmptyStateBtn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+        }
+      }
+
+      if (toggleEmptyStateBtn) toggleEmptyStateBtn.addEventListener('click', toggleEmpty);
+      if (resetFiltersEmptyBtn) resetFiltersEmptyBtn.addEventListener('click', toggleEmpty);
+
+      // Checkbox master toggle
+      if (bulkMasterCheckbox) {
+        bulkMasterCheckbox.addEventListener('change', (e) => {
+          rowCheckboxes.forEach(cb => {
+            cb.checked = e.target.checked;
+          });
+          bulkActionBar.style.opacity = e.target.checked ? '1' : '0.4';
+        });
+      }
+
+      // Key generator helper
+      if (genKeyBtn && keyField) {
+        genKeyBtn.addEventListener('click', () => {
+          const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+          let part1 = '';
+          let part2 = '';
+          for (let i = 0; i < 4; i++) {
+            part1 += chars.charAt(Math.floor(Math.random() * chars.length));
+            part2 += chars.charAt(Math.floor(Math.random() * chars.length));
+          }
+          keyField.value = `LT-${part1}-${part2}-encl-sec`;
+        });
+      }
+
+      if (copyKeyBtn && keyField) {
+        copyKeyBtn.addEventListener('click', () => {
+          navigator.clipboard?.writeText(keyField.value);
+          const icon = copyKeyBtn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            icon.textContent = 'done';
+            setTimeout(() => { icon.textContent = 'content_copy'; }, 1500);
+          }
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>
