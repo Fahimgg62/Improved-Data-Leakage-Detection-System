@@ -55,6 +55,7 @@ Connected with Stitch UI Prototype: [LeakTrace Forensic Watermarking Portal (Sti
 ### 2. Install Dependencies
 ```bash
 npm install
+cd client && npm install && cd ..
 ```
 
 ### 3. Run the Automated Test Suite (12 EP & BVA Test Cases)
@@ -64,13 +65,16 @@ npm test
 *Executes all 12 test cases specified in `Equivalence_Partitioning_and_BVA_Test_Cases.md` with 100% pass verification.*
 
 ### 4. Start the Application
-```bash
-npm start
-```
-The server will boot and serve the full application at:
-```
-http://localhost:5000
-```
+- **Option A (Full Production Server & React SPA):**
+  ```bash
+  npm run build    # Compiles React frontend to client/dist
+  npm start        # Launches Express backend serving React SPA on http://localhost:5000
+  ```
+- **Option B (Vite Hot-Reload Development Mode):**
+  ```bash
+  npm start        # Backend on port 5000
+  npm run client   # React Vite dev server on http://localhost:3000
+  ```
 
 ---
 
