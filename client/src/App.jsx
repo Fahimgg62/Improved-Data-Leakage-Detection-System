@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Dashboard from './components/Dashboard';
 import MasterVault from './components/MasterVault';
 import SecureUpload from './components/SecureUpload';
+import AssignAgents from './components/AssignAgents';
 import ForensicLab from './components/ForensicLab';
 import AuditTrail from './components/AuditTrail';
 import AgentsList from './components/AgentsList';
@@ -157,7 +158,10 @@ export default function App() {
           {activeTab === 'vault' && (
             <MasterVault
               files={vaultFiles}
-              onOpenAllocate={(f) => setAllocatingFile(f)}
+              onOpenAllocate={(f) => {
+                setAllocatingFile(f);
+                setActiveTab('assign');
+              }}
               onNavigate={(tab) => setActiveTab(tab)}
             />
           )}
@@ -169,6 +173,20 @@ export default function App() {
                 fetchStats();
               }}
               onNavigate={(tab) => setActiveTab(tab)}
+            />
+          )}
+
+          {activeTab === 'assign' && (
+            <AssignAgents
+              files={vaultFiles}
+              agents={agents}
+              selectedFileId={allocatingFile?.id}
+              onBackToVault={() => setActiveTab('vault')}
+              onAllocationSuccess={() => {
+                fetchFiles();
+                fetchStats();
+                fetchAgentFilesCount();
+              }}
             />
           )}
 

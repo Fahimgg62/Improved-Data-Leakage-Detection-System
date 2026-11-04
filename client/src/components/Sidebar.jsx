@@ -7,6 +7,7 @@ export default function Sidebar({ user, activeTab, onSelectTab, onLogout, assign
     { id: 'dashboard', label: 'SOC Dashboard', icon: 'dashboard', adminOnly: true },
     { id: 'vault', label: 'Master Vault', icon: 'folder_special', adminOnly: true },
     { id: 'upload', label: 'Secure Ingestion', icon: 'upload_file', adminOnly: true },
+    { id: 'assign', label: 'Assign Agents', icon: 'share', tag: 'FR-2', adminOnly: true },
     { id: 'investigate', label: 'Forensic Lab', icon: 'biotech', tag: 'FR-5', adminOnly: true },
     { id: 'audit', label: 'Audit Trail', icon: 'policy', adminOnly: true },
     { id: 'agents', label: 'Enclave Agents', icon: 'group', adminOnly: true },
