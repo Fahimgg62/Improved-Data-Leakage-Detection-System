@@ -1,3 +1,13 @@
+================================================================================
+                    IMPROVED DATA LEAKAGE DETECTION SYSTEM
+                     Software Requirements Specification (SRS)
+================================================================================
+Name          : Abid Ajmal Tahmid
+ID            : 24524203133
+Module        : Steganographic Core Engine (UUID v4, Image LSB, Text Zero-Width)
+Project Title : Improved Data Leakage Detection System
+================================================================================
+
 Name: Abid Ajmal Tahmid
 ID: 24524203133
 
